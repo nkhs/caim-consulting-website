@@ -125,28 +125,28 @@ h6 {
 --------------------------------------------------------------*/
 
 #header {
-  height: 80px;
+  height: 100px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  padding: 20px 0;
+  padding: 30px 0;
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
 }
 
 #header.header-scrolled,
 #header.header-pages {
-  height: 70px;
+  height: 100px;
   padding: 10px 0;
 }
 
 #header .logo h1 {
-  font-size: 36px;
+  font-size: 25px;
   margin: 0;
   padding: 0;
-  line-height: 1;
+  line-height: 0;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #00366f;
 }
@@ -160,7 +160,7 @@ h6 {
 #header .logo img {
   padding: 0;
   margin: 7px 0;
-  max-height: 100px;
+  max-height: 50px;
 }
 
 .main-pages {
@@ -1342,12 +1342,12 @@ h6 {
 
 @media (max-width: 991px) {
   #header {
-    height: 60px;
+    height: 75px;
     padding: 10px 0;
   }
 
   #header .logo h1 {
-    font-size: 28px;
+    font-size: 20px;
     padding: 8px 0;
   }
 
