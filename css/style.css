@@ -136,7 +136,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-pages {
-  height: 60px;
+  height: 70px;
   padding: 10px 0;
 }
 
@@ -146,8 +146,9 @@ h6 {
   padding: 0;
   line-height: 1;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  color: #00366f;
 }
 
 #header .logo h1 a,
@@ -159,7 +160,7 @@ h6 {
 #header .logo img {
   padding: 0;
   margin: 7px 0;
-  max-height: 26px;
+  max-height: 100px;
 }
 
 .main-pages {
