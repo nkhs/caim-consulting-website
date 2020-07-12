@@ -990,7 +990,9 @@ h6 {
 }
 
 #team .member .social {
+  font-size: 40px;
   margin-top: 15px;
+  padding: 20px;
 }
 
 #team .member .social a {
