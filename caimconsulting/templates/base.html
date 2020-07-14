@@ -7,9 +7,15 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
 
+    <!-- Loading Django static -->
+    {% load static %}
+
     <!-- Favicons -->
-    <link href="static/img/favicon.png" rel="icon" />
-    <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="{% static 'img/favicon.png' %}" rel="icon" />
+    <link
+      href="{% static 'img/apple-touch-icon.png' %}"
+      rel="apple-touch-icon"
+    />
 
     <!-- Google Fonts -->
     <link
@@ -19,25 +25,34 @@
 
     <!-- Bootstrap CSS File -->
     <link
-      href="static/assets/bootstrap/css/bootstrap.min.css"
+      href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}"
       rel="stylesheet"
     />
 
     <!-- Libraries CSS Files -->
     <link
-      href="static/assets/font-awesome/css/font-awesome.min.css"
+      href="{% static 'assets/font-awesome/css/font-awesome.min.css' %}"
       rel="stylesheet"
     />
-    <link href="static/assets/animate/animate.min.css" rel="stylesheet" />
-    <link href="static/assets/ionicons/css/ionicons.min.css" rel="stylesheet" />
     <link
-      href="static/assets/owlcarousel/assets/owl.carousel.min.css"
+      href="{% static 'assets/animate/animate.min.css' %}"
+      rel="stylesheet' %}"
+    />
+    <link
+      href="{% static 'assets/ionicons/css/ionicons.min.css' %}"
       rel="stylesheet"
     />
-    <link href="static/assets/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link
+      href="{% static 'assets/owlcarousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/lightbox/css/lightbox.min.css' %}"
+      rel="stylesheet"
+    />
 
     <!-- Main Stylesheet File -->
-    <link href="static/css/style.css" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
 
     <!-- =======================================================
     Theme Name: NewBiz
@@ -49,8 +64,8 @@
 
   <body>
     <!-- prettier-ignore -->
-    {% load static %}
-    {% block page_content %} {% endblock %}
+    {% block page_content %}
+    {% endblock %}
     <!--==========================
       Footer
     ============================-->
@@ -144,21 +159,21 @@
     <!-- <div id="preloader"></div> -->
 
     <!-- JavaScript Libraries -->
-    <script src="static/assets/jquery/jquery.min.js"></script>
-    <script src="static/assets/jquery/jquery-migrate.min.js"></script>
-    <script src="static/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="static/assets/easing/easing.min.js"></script>
-    <script src="static/assets/mobile-nav/mobile-nav.js"></script>
-    <script src="static/assets/wow/wow.min.js"></script>
-    <script src="static/assets/waypoints/waypoints.min.js"></script>
-    <script src="static/assets/counterup/counterup.min.js"></script>
-    <script src="static/assets/owlcarousel/owl.carousel.min.js"></script>
-    <script src="static/assets/isotope/isotope.pkgd.min.js"></script>
-    <script src="static/assets/lightbox/js/lightbox.min.js"></script>
+    <script src="{% static 'assets/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/jquery/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/easing/easing.min.js' %}"></script>
+    <script src="{% static 'assets/mobile-nav/mobile-nav.js' %}"></script>
+    <script src="{% static 'assets/wow/wow.min.js' %}"></script>
+    <script src="{% static 'assets/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'assets/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/lightbox/js/lightbox.min.js' %}"></script>
     <!-- Contact Form JavaScript File -->
-    <script src="static/contactform/contactform.js"></script>
+    <script src="{% static 'contactform/contactform.js' %}"></script>
 
     <!-- Template Main Javascript File -->
-    <script src="static/js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
