@@ -129,15 +129,15 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  padding: 30px 0;
+  padding: 10px 0;
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
 }
 
 #header.header-scrolled,
 #header.header-pages {
-  height: 100px;
-  padding: 10px 0;
+  height: 90px;
+  padding: 3px 0;
 }
 
 #header .logo h1 {
@@ -159,12 +159,12 @@ h6 {
 
 #header .logo img {
   padding: 0;
-  margin: 7px 0;
-  max-height: 50px;
+  margin: 0 0;
+  max-height: 100px;
 }
 
 .main-pages {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 /*--------------------------------------------------------------
@@ -251,7 +251,7 @@ h6 {
 .main-nav,
 .main-nav * {
   margin: 0;
-  padding: 0;
+  padding: 10px 0;
   list-style: none;
 }
 
@@ -267,7 +267,7 @@ h6 {
   color: #004289;
   padding: 10px 15px;
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
@@ -1352,8 +1352,8 @@ h6 {
 
 @media (max-width: 991px) {
   #header {
-    height: 75px;
-    padding: 10px 0;
+    height: 100px;
+    padding: 7px 0;
   }
 
   #header .logo h1 {
