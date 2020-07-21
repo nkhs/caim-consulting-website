@@ -1,7 +1,37 @@
 jQuery(document).ready(function ($) {
   "use strict";
 
-  //Contact
+  // CSRF TOKEN FOR AJAX
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        // Does this cookie string begin with the name we want?
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+  const csrftoken = getCookie("csrftoken");
+
+  function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return /^(GET|HEAD|OPTIONS|TRACE)$/.test(method);
+  }
+  $.ajaxSetup({
+    beforeSend: function (xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+    },
+  });
+
+  // Contact Form
   $("form.contactForm").submit(function () {
     var f = $(this).find(".form-group"),
       ferror = false,
@@ -110,14 +140,15 @@ jQuery(document).ready(function ($) {
     else var str = $(this).serialize();
     var action = $(this).attr("action");
     if (!action) {
-      action = "contactform/contactform.php";
+      alert("performed action");
+      action = "/contactform/";
     }
     $.ajax({
       type: "POST",
       url: action,
       data: str,
       success: function (msg) {
-        // alert(msg);
+        alert(msg);
         if (msg == "OK") {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
