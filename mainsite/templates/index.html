@@ -15,13 +15,13 @@
 
     <nav class="main-nav float-right d-none d-lg-block">
       <ul>
-        <li class="active"><a href="#intro">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Blogs</a></li>
-        <li><a href="#testimonials">Team</a></li>
-        <li><a href="#team">Advisory Board</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li class="active"><a href="{% url 'homepage' %}#intro">Home</a></li>
+        <li><a href="{% url 'homepage' %}#about">About Us</a></li>
+        <li><a href="{% url 'homepage' %}#services">Services</a></li>
+        <li><a href="{% url 'blogpage' %}#intro">Blogs</a></li>
+        <li><a href="{% url 'homepage' %}#team">Team</a></li>
+        <li><a href="{% url 'homepage' %}#board">Advisory Board</a></li>
+        <li><a href="{% url 'homepage' %}#contact">Contact Us</a></li>
       </ul>
     </nav>
     <!-- .main-nav -->
@@ -43,10 +43,12 @@
         We provide<br /><span>100% cost free</span><br />business assistance!
       </h2>
       <div>
-        <a href="#contact" class="btn-get-started scrollto"
-          >Apply for Assistance</a
-        >
-        <a href="#services" class="btn-services scrollto">Our Services</a>
+        <a href="{% url 'homepage' %}#contact" class="btn-get-started scrollto">
+          Apply for Assistance
+        </a>
+        <a href="{% url 'homepage' %}#services" class="btn-services scrollto">
+          Our Services
+        </a>
       </div>
     </div>
   </div>
@@ -83,7 +85,7 @@
           <div class="icon-box wow fadeInUp">
             <div class="icon"><i class="fa fa-users"></i></div>
             <h4 class="title">
-              <a href="#testimonials">Dedicated Team</a>
+              <a href="{% url 'homepage' %}#team">Dedicated Team</a>
             </h4>
             <p class="description">
               Caim features a highly motivated team of individuals who
@@ -96,7 +98,7 @@
           <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
             <div class="icon"><i class="fa fa-check-square"></i></div>
             <h4 class="title">
-              <a href="#team">Assured Quality Service</a>
+              <a href="{% url 'homepage' %}#board">Assured Quality Service</a>
             </h4>
             <p class="description">
               Besides, the quality of services we provide is underpinned by some
@@ -107,7 +109,9 @@
 
           <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
             <div class="icon"><i class="fa fa-bar-chart"></i></div>
-            <h4 class="title"><a href="#why-us">Reliable Platform</a></h4>
+            <h4 class="title">
+              <a href="{% url 'homepage' %}#why-us">Reliable Platform</a>
+            </h4>
             <p class="description">
               Caim is a unique support platform to catalyse the fluent
               realisation of your business ideas and simultaneously ensuring
@@ -397,303 +401,9 @@
   </section>
 
   <!--==========================
-      Portfolio Section
-    ============================-->
-  <section id="portfolio" class="clearfix">
-    <div class="container">
-      <header class="section-header">
-        <h3 class="section-title">Our Published Blogs</h3>
-      </header>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row portfolio-container">
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img
-              src="{% static 'img/portfolio/app1.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4><a href="#">App 1</a></h4>
-              <p>App</p>
-              <div>
-                <a
-                  href="{% static 'img/portfolio/app1.jpg' %}"
-                  data-lightbox="portfolio"
-                  data-title="App 1"
-                  class="link-preview"
-                  title="Preview"
-                  ><i class="ion ion-eye"></i
-                ></a>
-                <a href="#" class="link-details" title="More Details"
-                  ><i class="ion ion-android-open"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="col-lg-4 col-md-6 portfolio-item filter-web"
-          data-wow-delay="0.1s"
-        >
-          <div class="portfolio-wrap">
-            <img
-              src="{% static 'img/portfolio/web3.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4><a href="#">Web 3</a></h4>
-              <p>Web</p>
-              <div>
-                <a
-                  href="{% static 'img/portfolio/web3.jpg' %}"
-                  class="link-preview"
-                  data-lightbox="portfolio"
-                  data-title="Web 3"
-                  title="Preview"
-                  ><i class="ion ion-eye"></i
-                ></a>
-                <a href="#" class="link-details" title="More Details"
-                  ><i class="ion ion-android-open"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="col-lg-4 col-md-6 portfolio-item filter-app"
-          data-wow-delay="0.2s"
-        >
-          <div class="portfolio-wrap">
-            <img
-              src="{% static 'img/portfolio/app2.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4><a href="#">App 2</a></h4>
-              <p>App</p>
-              <div>
-                <a
-                  href="{% static 'img/portfolio/app2.jpg' %}"
-                  class="link-preview"
-                  data-lightbox="portfolio"
-                  data-title="App 2"
-                  title="Preview"
-                  ><i class="ion ion-eye"></i
-                ></a>
-                <a href="#" class="link-details" title="More Details"
-                  ><i class="ion ion-android-open"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img
-              src="{% static 'img/portfolio/card2.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4><a href="#">Card 2</a></h4>
-              <p>Card</p>
-              <div>
-                <a
-                  href="{% static 'img/portfolio/card2.jpg' %}"
-                  class="link-preview"
-                  data-lightbox="portfolio"
-                  data-title="Card 2"
-                  title="Preview"
-                  ><i class="ion ion-eye"></i
-                ></a>
-                <a href="#" class="link-details" title="More Details"
-                  ><i class="ion ion-android-open"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="col-lg-4 col-md-6 portfolio-item filter-web"
-          data-wow-delay="0.1s"
-        >
-          <div class="portfolio-wrap">
-            <img
-              src="{% static 'img/portfolio/web2.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4><a href="#">Web 2</a></h4>
-              <p>Web</p>
-              <div>
-                <a
-                  href="{% static 'img/portfolio/web2.jpg' %}"
-                  class="link-preview"
-                  data-lightbox="portfolio"
-                  data-title="Web 2"
-                  title="Preview"
-                  ><i class="ion ion-eye"></i
-                ></a>
-                <a href="#" class="link-details" title="More Details"
-                  ><i class="ion ion-android-open"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="col-lg-4 col-md-6 portfolio-item filter-app"
-          data-wow-delay="0.2s"
-        >
-          <div class="portfolio-wrap">
-            <img
-              src="{% static 'img/portfolio/app3.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4><a href="#">App 3</a></h4>
-              <p>App</p>
-              <div>
-                <a
-                  href="{% static 'img/portfolio/app3.jpg' %}"
-                  class="link-preview"
-                  data-lightbox="portfolio"
-                  data-title="App 3"
-                  title="Preview"
-                  ><i class="ion ion-eye"></i
-                ></a>
-                <a href="#" class="link-details" title="More Details"
-                  ><i class="ion ion-android-open"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img
-              src="{% static 'img/portfolio/card1.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4>
-                <a
-                  href="https://drive.google.com/file/d/1PMs3uKdxKOVt8HsuvOn0D__Vv7wcQzkE/view"
-                  >Labour Laws for Start-ups</a
-                >
-              </h4>
-              <p>Card</p>
-              <div>
-                <a
-                  href="{% static 'img/portfolio/card1.jpg' %}"
-                  class="link-preview"
-                  data-lightbox="portfolio"
-                  data-title="Card 1"
-                  title="Preview"
-                  ><i class="ion ion-eye"></i
-                ></a>
-                <a
-                  href="https://drive.google.com/file/d/1PMs3uKdxKOVt8HsuvOn0D__Vv7wcQzkE/view"
-                  class="link-details"
-                  title="More Details"
-                  ><i class="ion ion-android-open"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="col-lg-4 col-md-6 portfolio-item filter-card"
-          data-wow-delay="0.1s"
-        >
-          <div class="portfolio-wrap">
-            <img
-              src="{% static 'img/portfolio/card3.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4><a href="#">Card 3</a></h4>
-              <p>Card</p>
-              <div>
-                <a
-                  href="{% static 'img/portfolio/card3.jpg' %}"
-                  class="link-preview"
-                  data-lightbox="portfolio"
-                  data-title="Card 3"
-                  title="Preview"
-                  ><i class="ion ion-eye"></i
-                ></a>
-                <a href="#" class="link-details" title="More Details"
-                  ><i class="ion ion-android-open"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="col-lg-4 col-md-6 portfolio-item filter-web"
-          data-wow-delay="0.2s"
-        >
-          <div class="portfolio-wrap">
-            <img
-              src="{% static 'img/portfolio/web1.jpg' %}"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4><a href="#">Web 1</a></h4>
-              <p>Web</p>
-              <div>
-                <a
-                  href="{% static 'img/portfolio/web1.jpg' %}"
-                  class="link-preview"
-                  data-lightbox="portfolio"
-                  data-title="Web 1"
-                  title="Preview"
-                  ><i class="ion ion-eye"></i
-                ></a>
-                <a href="#" class="link-details" title="More Details"
-                  ><i class="ion ion-android-open"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- #portfolio -->
-
-  <!--==========================
       Clients Section
     ============================-->
-  <section id="testimonials" class="section-bg">
+  <section id="team" class="section-bg">
     <div class="container">
       <header class="section-header">
         <h3>Our Team</h3>
@@ -701,11 +411,11 @@
 
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <div class="owl-carousel testimonials-carousel wow fadeInUp">
-            <div class="testimonial-item">
+          <div class="owl-carousel team-carousel wow fadeInUp">
+            <div class="team-item">
               <img
-                src="{% static 'img/testimonial-1.jpg' %}"
-                class="testimonial-img"
+                src="{% static 'img/team-1.jpg' %}"
+                class="team-img"
                 alt=""
               />
               <h3>
@@ -729,10 +439,10 @@
               </p>
             </div>
 
-            <div class="testimonial-item">
+            <div class="team-item">
               <img
-                src="{% static 'img/testimonial-2.jpg' %}"
-                class="testimonial-img"
+                src="{% static 'img/team-2.jpg' %}"
+                class="team-img"
                 alt=""
               />
               <h3>
@@ -756,10 +466,10 @@
               </p>
             </div>
 
-            <div class="testimonial-item">
+            <div class="team-item">
               <img
-                src="{% static 'img/testimonial-3.jpg' %}"
-                class="testimonial-img"
+                src="{% static 'img/team-3.jpg' %}"
+                class="team-img"
                 alt=""
               />
               <h3>
@@ -784,10 +494,10 @@
               </p>
             </div>
 
-            <div class="testimonial-item">
+            <div class="team-item">
               <img
-                src="{% static 'img/testimonial-4.jpg' %}"
-                class="testimonial-img"
+                src="{% static 'img/team-4.jpg' %}"
+                class="team-img"
                 alt=""
               />
               <h3>
@@ -811,10 +521,10 @@
               </p>
             </div>
 
-            <div class="testimonial-item">
+            <div class="team-item">
               <img
-                src="{% static 'img/testimonial-5.jpg' %}"
-                class="testimonial-img"
+                src="{% static 'img/team-5.jpg' %}"
+                class="team-img"
                 alt=""
               />
               <h3>
@@ -843,10 +553,10 @@
       </div>
     </div>
   </section>
-  <!-- #testimonials -->
+  <!-- #team -->
 
   <!-- Section: Team v.1 -->
-  <section id="team">
+  <section id="board">
     <div class="container">
       <!-- Section heading -->
       <div class="section-header">
@@ -1052,6 +762,7 @@
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
           <form action="" method="post" role="form" class="contactForm">
+            {% csrf_token %}
             <div class="form-row">
               <div class="form-group col-lg-6">
                 <input

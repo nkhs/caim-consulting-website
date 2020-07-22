@@ -131,4 +131,12 @@
     loop: true,
     items: 1,
   });
+
+  // Team carousel (uses the Owl Carousel library)
+  $(".team-carousel").owlCarousel({
+    autoplay: true,
+    dots: true,
+    loop: true,
+    items: 1,
+  });
 })(jQuery);
