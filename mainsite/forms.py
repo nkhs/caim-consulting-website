@@ -1,13 +1,8 @@
-from mainsite.models import Query
-from django.forms import ModelForm
+from django import forms
 
 
-class QueryForm(ModelForm):
-    class Meta:
-        model = Query
-        fields = [
-            "name",
-            "email",
-            "subject",
-            "message",
-        ]
+class QueryForm(forms.Form):
+    name = forms.CharField(max_length=40)
+    email = forms.EmailField()
+    subject = forms.CharField(max_length=40)
+    message = forms.CharField()
