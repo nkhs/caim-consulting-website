@@ -1,0 +1,131 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<!--==========================
+  Header
+  ============================-->
+<header id="header" class="fixed-top">
+  <div class="container">
+    <div class="logo float-left">
+      <a href="#" class="scrollto">
+        <img src="{% static 'img/logo.png' %}" alt="" class="img-fluid" />
+      </a>
+    </div>
+
+    <nav class="main-nav float-right d-none d-lg-block">
+      <ul>
+        <li class="active"><a href="{% url 'homepage' %}#intro">Home</a></li>
+        <li><a href="{% url 'homepage' %}#about">About Us</a></li>
+        <li><a href="{% url 'homepage' %}#services">Services</a></li>
+        <li><a href="{% url 'blogpage' %}#intro">Blogs</a></li>
+        <li><a href="{% url 'homepage' %}#team">Team</a></li>
+        <li><a href="{% url 'homepage' %}#board">Advisory Board</a></li>
+        <li><a href="{% url 'homepage' %}#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <!-- .main-nav -->
+  </div>
+</header>
+<!-- #header -->
+
+<!--==========================
+    Intro Section
+  ============================-->
+<section id="intro" class="clearfix">
+  <div class="container">
+    <div class="intro-info">
+      <h2>Query: {{ messages.0.chat.pk }}</h2>
+      <div>
+        <a href="#inputMessageBox" class="btn-get-started scrollto">
+          Go to message box
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container">
+    <div class="intro-img">
+      <img src="{% static 'img/intro-img.svg' %}" alt="" class="img-fluid" />
+    </div>
+
+    <div class="intro-info">
+      <h2>
+        We provide<br /><span>100% cost free</span><br />business assistance!
+      </h2>
+      <div>
+        <a href="{% url 'homepage' %}#contact" class="btn-get-started scrollto">
+          Apply for Assistance
+        </a>
+        <a href="{% url 'homepage' %}#services" class="btn-services scrollto">
+          Our Services
+        </a>
+      </div>
+    </div>
+  </div> -->
+</section>
+<!-- #intro -->
+
+<main id="main">
+  <div id="chatBox" class="container chat-box">
+    <!-- prettier-ignore -->
+    {% for message in messages %}
+    {% if message.by_admin %}
+    <div class="bubbleWrapper">
+      <div class="inlineContainer">
+        <div class="adminBubble admin">{{ message.message_text }}</div>
+      </div>
+    </div>
+    {% else %}
+    <div class="bubbleWrapper">
+      <div class="inlineContainer user">
+        <div class="userBubble user">{{ message.message_text }}</div>
+      </div>
+    </div>
+    <!-- prettier-ignore -->
+    {% endif %}
+    {% endfor %}
+  </div>
+  <!-- <div id="inputMessageBox" class="container">
+    <p>
+        write something here for input box
+    </p>
+  </div> -->
+  <section id="contact">
+    <div class="container-fluid">
+      <div class="row wow fadeInUp">
+        <div id="inputMessageBox" class="container inputMessageBox">
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form
+              id="{{ messages.0.chat.pk }}"
+              action=""
+              role="form"
+              class="messageBox"
+            >
+              {% csrf_token %}
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  class="form-control"
+                  name="message"
+                  rows="5"
+                  placeholder="Type your question here"
+                  required
+                ></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center">
+                <button type="submit" title="Send Message">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}
