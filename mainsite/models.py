@@ -1,14 +1,34 @@
+from datetime import datetime
+
 from django.db import models
 
-# Create your models here.
-class Query(models.Model):
-    date_time = models.DateTimeField(auto_now_add=True)
-    name = models.CharField(max_length=40)
-    email = models.EmailField()
-    subject = models.CharField(max_length=40)
-    message = models.TextField(max_length=500)
+
+class Chat(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    creator_name = models.CharField(max_length=40)
+    creator_email = models.EmailField()
+    subject = models.CharField(max_length=50)
     resolved = models.BooleanField(default=False)
 
+    def __str__(self):
+        return f"{self.creator_name}: {self.subject}"
+
+
+class Message(models.Model):
+    chat = models.ForeignKey("Chat", on_delete=models.CASCADE)
+    offset = models.BigIntegerField(editable=False)
+    by_admin = models.BooleanField(default=False)
+    message_text = models.TextField()
+
+    def save(self, *args, **kwargs):
+        d = datetime.now()
+        self.offset = d.strftime("%Y%m%d%H%M%S")
+        super(Message, self).save(*args, **kwargs)
+
+    def __str__(self):
+        if self.by_admin:
+            return f"ADMIN: {self.message_text}"
+        return f"{self.chat}: {self.message_text}"
+
     class Meta:
-        verbose_name = "Query"
-        verbose_name_plural = "Queries"
+        unique_together = (("chat", "offset"),)
