@@ -1,0 +1,61 @@
+/*
+Reference CodePen: https://codepen.io/kristinak/pen/bXqayB
+ */
+
+/* * {
+  font-family: "Avenir";
+} */
+.inputMessageBox {
+  width: 75%;
+}
+.bubbleWrapper {
+  padding: 2px 2px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-self: flex-end;
+  color: #fff;
+}
+.inlineContainer {
+  display: inline-flex;
+}
+.inlineContainer.user {
+  flex-direction: row-reverse;
+}
+/* .inlineIcon {
+  width: 20px;
+  object-fit: contain;
+} */
+.userBubble {
+  min-width: 60px;
+  max-width: 700px;
+  padding: 9px 9px;
+  margin: 3px 4px;
+  background-color: #5b5377;
+  border-radius: 16px 16px 0 16px;
+  border: 1px solid #443f56;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+.adminBubble {
+  min-width: 60px;
+  max-width: 700px;
+  padding: 9px 9px;
+  margin: 3px 4px;
+  background-color: #6c8ea4;
+  border-radius: 16px 16px 16px 0;
+  border: 1px solid #54788e;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+.user {
+  align-self: flex-end;
+}
+.admin {
+  align-self: flex-start;
+}
+span.user,
+span.admin {
+  font-size: 14px;
+  color: grey;
+}
