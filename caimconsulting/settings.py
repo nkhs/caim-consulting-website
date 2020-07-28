@@ -119,4 +119,11 @@ STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, "static"),
     "caimconsulting/static/",
     "mainsite/static/",
+    "blog/static/",
 ]
+
+# https://docs.djangoproject.com/en/3.0/ref/settings/#media-root
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# https://docs.djangoproject.com/en/3.0/ref/settings/#media-url
+MEDIA_URL = "/media/"
