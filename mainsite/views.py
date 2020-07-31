@@ -12,8 +12,9 @@ def index(request):
 def contactform(request):
     if request.method == "POST":
         form = QueryForm(request.POST)
+        user = request.user
         if form.is_valid():
-            if link_chat_to_message(form.cleaned_data):
+            if link_chat_to_message(form.cleaned_data, user):
                 return JsonResponse({"msg": "OK"})
             else:
                 return JsonResponse({"msg": "Cannot create Chat"})
@@ -36,8 +37,13 @@ def messageinput(request):
 
 def queries(request, chat_id):
     if request.method == "GET":
-        messages = Message.objects.filter(chat__pk=chat_id)
-        return render(request, "query.html", {"messages": messages})
+        try:
+            chat = Chat.objects.get(pk=chat_id, user=request.user)
+        except:
+            return render(request, "query.html", {"allowed": False})
+        else:
+            messages = Message.objects.filter(chat=chat)
+        return render(request, "query.html", {"messages": messages, "allowed": True})
 
 
 def link_message_to_chat(chat_id, message_text):
@@ -47,12 +53,10 @@ def link_message_to_chat(chat_id, message_text):
     return True
 
 
-def link_chat_to_message(data):
-    name = data["name"]
-    email = data["email"]
+def link_chat_to_message(data, user):
     subject = data["subject"]
     message = data["message"]
-    chat = Chat(creator_name=name, creator_email=email, subject=subject)
+    chat = Chat(user=user, subject=subject)
     chat.save()
     message = Message(chat=chat, message_text=message)
     message.save()

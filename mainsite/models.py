@@ -1,17 +1,17 @@
 from datetime import datetime
 
 from django.db import models
+from django.conf import settings
 
 
 class Chat(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    creator_name = models.CharField(max_length=40)
-    creator_email = models.EmailField()
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     subject = models.CharField(max_length=50)
     resolved = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.creator_name}: {self.subject}"
+        return f"{self.user}: {self.subject}"
 
 
 class Message(models.Model):

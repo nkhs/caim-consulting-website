@@ -693,34 +693,9 @@
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
+          {% if user.is_authenticated %}
           <form action="" method="post" role="form" class="contactForm">
             {% csrf_token %}
-            <div class="form-row">
-              <div class="form-group col-lg-6">
-                <input
-                  type="text"
-                  name="name"
-                  class="form-control"
-                  id="name"
-                  placeholder="Your Name"
-                  data-rule="minlen:4"
-                  data-msg="Please enter at least 4 chars"
-                />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group col-lg-6">
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  id="email"
-                  placeholder="Your Email"
-                  data-rule="email"
-                  data-msg="Please enter a valid email"
-                />
-                <div class="validation"></div>
-              </div>
-            </div>
             <div class="form-group">
               <input
                 type="text"
@@ -748,17 +723,26 @@
               <button type="submit" title="Send Message">
                 Send Message
               </button>
-              <hr />
-              <h3>
-                <i>
-                  Alternatively, you can reach out to us at <br />
-                  <a href="mailto:contact@caimconsulting.in">
-                    contact@caimconsulting.in
-                  </a>
-                </i>
-              </h3>
             </div>
           </form>
+          {% else %}
+          <form id="login-page" action="{% url 'profile' %}">
+            <button type="submit" form="login-page" title="Login">
+              Login to Contact
+            </button>
+          </form>
+          {% endif %}
+          <hr />
+          <div class="text-center">
+            <h3>
+              <i>
+                Alternatively, you can reach out to us at <br />
+                <a href="mailto:contact@caimconsulting.in">
+                  contact@caimconsulting.in
+                </a>
+              </i>
+            </h3>
+          </div>
         </div>
       </div>
     </div>

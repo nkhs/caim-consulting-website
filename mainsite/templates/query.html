@@ -35,37 +35,23 @@
 <section id="intro" class="clearfix">
   <div class="container">
     <div class="intro-info">
+      {% if allowed %}
       <h2>Query: {{ messages.0.chat.pk }}</h2>
       <div>
         <a href="#inputMessageBox" class="btn-get-started scrollto">
           Go to message box
         </a>
       </div>
+      {% else %}
+      <h2>You don't have permission to view this chat</h2>
+      {% endif %}
     </div>
   </div>
-  <!-- <div class="container">
-    <div class="intro-img">
-      <img src="{% static 'img/intro-img.svg' %}" alt="" class="img-fluid" />
-    </div>
-
-    <div class="intro-info">
-      <h2>
-        We provide<br /><span>100% cost free</span><br />business assistance!
-      </h2>
-      <div>
-        <a href="{% url 'homepage' %}#contact" class="btn-get-started scrollto">
-          Apply for Assistance
-        </a>
-        <a href="{% url 'homepage' %}#services" class="btn-services scrollto">
-          Our Services
-        </a>
-      </div>
-    </div>
-  </div> -->
 </section>
 <!-- #intro -->
 
 <main id="main">
+  {% if allowed %}
   <div id="chatBox" class="container chat-box">
     <!-- prettier-ignore -->
     {% for message in messages %}
@@ -85,11 +71,6 @@
     {% endif %}
     {% endfor %}
   </div>
-  <!-- <div id="inputMessageBox" class="container">
-    <p>
-        write something here for input box
-    </p>
-  </div> -->
   <section id="contact">
     <div class="container-fluid">
       <div class="row wow fadeInUp">
@@ -126,6 +107,7 @@
       </div>
     </div>
   </section>
+  {% endif %}
 </main>
 
 {% endblock %}

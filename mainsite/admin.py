@@ -9,13 +9,12 @@ class ChatAdmin(admin.ModelAdmin):
     list_display = (
         "pk",
         "created_at",
-        "creator_name",
-        "creator_email",
+        "user",
         "subject",
         "resolved",
     )
     list_filter = ("resolved",)
-    search_fields = ("subject", "creator_email")
+    search_fields = ("subject", "user")
 
     def mark_as_resolved(self, request, queryset):
         queryset.update(resolved=True)

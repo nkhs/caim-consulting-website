@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "mainsite.apps.MainsiteConfig",
     "blog.apps.BlogConfig",
+    "accounts.apps.AccountsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -127,3 +128,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#media-url
 MEDIA_URL = "/media/"
+
+# Login redirect URL for accounts
+LOGIN_REDIRECT_URL = "profile"
+
+# Default User profile
+AUTH_USER_MODEL = "accounts.User"
