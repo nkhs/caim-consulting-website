@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<!--==========================
+  Header
+  ============================-->
+<header id="header" class="fixed-top">
+  <div class="container">
+    <div class="logo float-left">
+      <a href="#" class="scrollto">
+        <img src="{% static 'img/logo.png' %}" alt="" class="img-fluid" />
+      </a>
+    </div>
+
+    <nav class="main-nav float-right d-none d-lg-block">
+      <ul>
+        <li class="active"><a href="{% url 'homepage' %}#intro">Home</a></li>
+        <li><a href="{% url 'homepage' %}#about">About Us</a></li>
+        <li><a href="{% url 'homepage' %}#services">Services</a></li>
+        <li><a href="{% url 'bloghome' %}#intro">Blogs</a></li>
+        <li><a href="{% url 'homepage' %}#team">Team</a></li>
+        <li><a href="{% url 'homepage' %}#board">Advisory Board</a></li>
+        <li><a href="{% url 'homepage' %}#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <!-- .main-nav -->
+  </div>
+</header>
+<!-- #header -->
+
+<!--==========================
+    Intro Section
+  ============================-->
+<section id="intro" class="clearfix">
+  <div class="container">
+    <div class="intro-info">
+      {% if user.is_authenticated %}
+      <h2>Welcome {{ user }}</h2>
+      {% else %}
+      <form id="login-page" action="{% url 'profile' %}">
+        <button type="submit" form="login-page" title="Login">
+          Login to see your queries
+        </button>
+      </form>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<!-- #intro -->
+
+<main id="main">
+  {% if user.is_authenticated %}
+  <h3>Your Chats</h3>
+  <ul style="list-class-type: none;">
+    {% for query in queries %}
+    <li>{{ query }}: <a href="{% url 'query' query.pk %}">Go to Chat</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <!-- <h2>You are {{ user }}</h2> -->
+</main>
+
+{% endblock %}
