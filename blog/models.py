@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class BlogPost(models.Model):
@@ -7,6 +8,9 @@ class BlogPost(models.Model):
     picture = models.ImageField(upload_to="blogimages/%Y/%m/%d/", null=True, blank=True)
     category = models.ForeignKey("Category", on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=50)
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1
+    )
     content = models.TextField()
 
     def __str__(self):
