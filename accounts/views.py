@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 
@@ -20,6 +20,6 @@ def sign_up(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return render(request, "profile.html")
+            return redirect("profile")
     context["form"] = form
     return render(request, "registration/sign_up.html", context)
