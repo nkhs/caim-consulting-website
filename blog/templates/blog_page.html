@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<!--==========================
+    Intro Section
+  ============================-->
+<section id="intro" class="clearfix">
+  <div class="container">
+    <div class="intro-info">
+      <h2>{{ blog.title }}</h2>
+    </div>
+  </div>
+</section>
+<!-- #intro -->
+
+<main id="main">
+  <div class="container">
+    <span class="small">Published on: {{ blog.published_datetime }}</span>
+    <span class="small">Author: {{ blog.author }}</span>
+    {% if blog.picture %}
+    <img src="{{ blog.picture }}" alt="Picture of Blog" />
+    {% endif %}
+    <p style="overflow-wrap: break-word; white-space: pre-wrap;">
+      {{ blog.content }}
+    </p>
+  </div>
+</main>
+
+{% endblock %}

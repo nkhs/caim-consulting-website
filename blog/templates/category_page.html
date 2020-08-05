@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<!--==========================
+    Intro Section
+  ============================-->
+<section id="intro" class="clearfix">
+  <div class="container">
+    <div class="intro-info">
+      <h2>{{ category.name }}</h2>
+    </div>
+  </div>
+</section>
+<!-- #intro -->
+
+<main id="main">
+  <div class="container">
+    {% for blog in blogs_in_category %}
+    <li>
+      {{ blog.title }} by {{ blog.author }}:
+      <a href="{% url 'blogpage' blog.pk %}">Go to blog</a>
+    </li>
+    {% endfor %}
+  </div>
+</main>
+
+{% endblock %}
