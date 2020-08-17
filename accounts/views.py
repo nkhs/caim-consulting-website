@@ -8,7 +8,6 @@ from mainsite.models import Chat
 
 @login_required
 def profile(request):
-    print(request.user)
     queries = Chat.objects.filter(user=request.user)
     return render(request, "profile.html", {"queries": queries})
 
