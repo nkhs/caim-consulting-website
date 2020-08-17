@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+# https://devcenter.heroku.com/articles/django-app-configuration
+import django_heroku
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -113,14 +116,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_URL = "/static/"
 
+# Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static"),
     "caimconsulting/static/",
     "mainsite/static/",
     "blog/static/",
+    "accounts/static/",
 ]
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#media-root
@@ -134,3 +140,6 @@ LOGIN_REDIRECT_URL = "profile"
 
 # Default User profile
 AUTH_USER_MODEL = "accounts.User"
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
