@@ -18,15 +18,22 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# To use local environment variables
+from dotenv import load_dotenv
+
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    load_dotenv(dotenv_file)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "e2u@5%r^p3=5ieeo*8zjm_lxb1s@2nfv9-g66)mw)#dn^0%=u("
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG") or False
 
 ALLOWED_HOSTS = []
 
@@ -53,7 +60,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # https://warehouse.python.org/project/whitenoise/
 ]
+
 
 ROOT_URLCONF = "caimconsulting.urls"
 
@@ -79,12 +89,16 @@ WSGI_APPLICATION = "caimconsulting.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#     }
+# }
+
+# https://devcenter.heroku.com/articles/heroku-postgresql#connecting-with-django
+# DATABASES = {}
+# DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
@@ -117,17 +131,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATIC_URL = "/static/"
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    # os.path.join(BASE_DIR, "static"),
     "caimconsulting/static/",
     "mainsite/static/",
     "blog/static/",
     "accounts/static/",
 ]
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#media-root
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -143,3 +162,8 @@ AUTH_USER_MODEL = "accounts.User"
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+# Heroku Postgres requires SSL, but SQLite doesn’t need or expect it.
+# Added for local development using SQLite
+options = DATABASES["default"].get("OPTIONS", {})
+options.pop("sslmode", None)
