@@ -16,12 +16,21 @@
 
 <main id="main">
   <div class="container">
-    {% for blog in blogs_in_category %}
-    <li>
-      {{ blog.title }} by {{ blog.author }}:
-      <a href="{% url 'blogpage' blog.pk %}">Go to blog</a>
-    </li>
-    {% endfor %}
+    <div class="card-columns">
+      {% for blog in blogs_in_category %}
+      <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">By {{ blog.author }}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ blog.title }}</h5>
+          <p class="card-text">
+            <a href="{% url 'blogpage' blog.pk %}">
+              Read {{ blog.title }}
+            </a>
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </main>
 
