@@ -2,14 +2,11 @@
 <!-- prettier-ignore -->
 {% load static %}
 
-<!--==========================
-    Intro Section
-  ============================-->
-<section id="intro" class="clearfix">
+<main id="main">
   <div class="container">
     <div class="intro-info">
       {% if user.is_authenticated %}
-      <h2>Welcome {{ user }}</h2>
+      <h2>Welcome {{ user.get_short_name }}</h2>
       <form action="/accounts/logout">
         <button type="submit">Log Out</button>
       </form>
@@ -22,19 +19,32 @@
       {% endif %}
     </div>
   </div>
-</section>
-<!-- #intro -->
-
-<main id="main">
-  {% if user.is_authenticated %}
-  <h3>Your Chats</h3>
-  <ul style="list-class-type: none;">
-    {% for query in queries %}
-    <li>{{ query }}: <a href="{% url 'query' query.pk %}">Go to Chat</a></li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-  <!-- <h2>You are {{ user }}</h2> -->
+  <div class="container">
+    {% if user.is_authenticated %}
+    <h3>Your Chats</h3>
+    <div class="container">
+      <div class="card-columns">
+        {% for query in queries %}
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">
+            By
+            <var>{{ query.user }}</var>
+            on {{ query.created_at }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ query.subject }}</h5>
+            <p class="card-text">
+              <strong>Resolved: {{ query.resolved }}</strong>
+              <br />
+              <a href="{% url 'query' query.pk %}">Continue Chat</a>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
 </main>
 
 {% endblock %}
