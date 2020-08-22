@@ -9,6 +9,10 @@ def index(request):
     return render(request, "index.html")
 
 
+def privacy_policy(request):
+    return render(request, "privacy_policy.html")
+
+
 def contactform(request):
     if request.method == "POST":
         form = QueryForm(request.POST)
