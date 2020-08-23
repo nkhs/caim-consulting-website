@@ -22,4 +22,5 @@ urlpatterns = [
     path("", include("blog.urls")),
     path("", include("accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("tinymce/", include("tinymce.urls")),
 ]

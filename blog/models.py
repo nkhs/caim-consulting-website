@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from tinymce.models import HTMLField
 
 
 class BlogPost(models.Model):
@@ -11,7 +12,7 @@ class BlogPost(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1
     )
-    content = models.TextField()
+    content = HTMLField()
 
     def __str__(self):
         return f"{self.category}: {self.title}"
