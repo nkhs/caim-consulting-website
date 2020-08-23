@@ -2,11 +2,12 @@ from django.http import JsonResponse
 from django.shortcuts import render
 
 from mainsite.forms import QueryForm
-from mainsite.models import Chat, Message
+from mainsite.models import Chat, Message, Service
 
 
 def index(request):
-    return render(request, "index.html")
+    services = Service.objects.all()
+    return render(request, "index.html", {"services": services})
 
 
 def privacy_policy(request):
@@ -60,7 +61,8 @@ def link_message_to_chat(chat_id, message_text):
 def link_chat_to_message(data, user):
     subject = data["subject"]
     message = data["message"]
-    chat = Chat(user=user, subject=subject)
+    service = data["service"]
+    chat = Chat(user=user, subject=subject, service=service)
     chat.save()
     message = Message(chat=chat, message_text=message)
     message.save()

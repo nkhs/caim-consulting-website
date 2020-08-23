@@ -1,6 +1,11 @@
 from django.contrib import admin
 
-from mainsite.models import Chat, Message
+from mainsite.models import Chat, Message, Service
+
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    pass
 
 
 @admin.register(Chat)
@@ -11,9 +16,10 @@ class ChatAdmin(admin.ModelAdmin):
         "created_at",
         "user",
         "subject",
+        "service",
         "resolved",
     )
-    list_filter = ("resolved",)
+    list_filter = ("resolved", "service")
     search_fields = ("subject", "user")
 
     def mark_as_resolved(self, request, queryset):
@@ -25,6 +31,9 @@ class ChatAdmin(admin.ModelAdmin):
         queryset.update(resolved=False)
 
     mark_as_unresolved.short_description = "Mark selected queries as unresolved"
+
+    def has_add_permission(self, request, obj=None):
+        return False
 
     def has_change_permission(self, request, obj=None):
         return False

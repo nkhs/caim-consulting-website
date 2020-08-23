@@ -97,7 +97,7 @@ jQuery(document).ready(function ($) {
       }
     });
     f.children("textarea").each(function () {
-      // run all inputs
+      // run all textarea inputs
 
       var i = $(this); // current input
       var rule = i.attr("data-rule");
@@ -136,11 +136,38 @@ jQuery(document).ready(function ($) {
           .show("blind");
       }
     });
+    f.children("select").each(function () {
+      // run all select inputs
+
+      var i = $(this); // current input
+      var rule = i.attr("data-rule");
+
+      if (rule !== undefined) {
+        var ierror = false; // error flag for current input
+
+        switch (rule) {
+          case "required":
+            if (i.val() === null) {
+              ferror = ierror = true;
+            }
+            break;
+        }
+        i.next(".validation")
+          .html(
+            ierror
+              ? i.attr("data-msg") != undefined
+                ? i.attr("data-msg")
+                : "wrong Input"
+              : ""
+          )
+          .show("blind");
+      }
+    });
     if (ferror) return false;
     else var str = $(this).serialize();
     var action = $(this).attr("action");
     if (!action) {
-      alert("performed action");
+      console.log("performed action");
       action = "/contactform/";
     }
     $.ajax({
@@ -149,7 +176,7 @@ jQuery(document).ready(function ($) {
       data: str,
       success: function (data) {
         var msg = data["msg"];
-        alert(msg);
+        console.log(msg);
         if (msg == "OK") {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
