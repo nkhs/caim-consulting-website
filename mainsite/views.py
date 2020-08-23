@@ -32,7 +32,11 @@ def messageinput(request):
         try:
             chat_id = request.POST.get("chat")
             message_text = request.POST.get("message")
-            if link_message_to_chat(chat_id, message_text):
+            if request.user.is_staff:
+                admin_msg = True
+            else:
+                admin_msg = False
+            if link_message_to_chat(chat_id, message_text, admin_msg):
                 return JsonResponse({"msg": "OK"})
             else:
                 return JsonResponse({"msg": "Cannot create Message"})
@@ -44,16 +48,24 @@ def queries(request, chat_id):
     if request.method == "GET":
         try:
             chat = Chat.objects.get(pk=chat_id, user=request.user)
+            allowed = True
         except:
-            return render(request, "query.html", {"allowed": False})
-        else:
+            chat = Chat.objects.get(pk=chat_id)
+            allowed = request.user.is_staff
+        if allowed:
             messages = Message.objects.filter(chat=chat)
-        return render(request, "query.html", {"messages": messages, "allowed": True})
+            return render(
+                request, "query.html", {"messages": messages, "allowed": allowed}
+            )
+        else:
+            return render(request, "query.html", {"allowed": allowed})
 
 
-def link_message_to_chat(chat_id, message_text):
+def link_message_to_chat(chat_id, message_text, admin_msg=False):
     fetched_chat = Chat.objects.get(pk=chat_id)
-    new_message = Message(chat=fetched_chat, message_text=message_text)
+    new_message = Message(
+        chat=fetched_chat, message_text=message_text, by_admin=admin_msg
+    )
     new_message.save()
     return True
 

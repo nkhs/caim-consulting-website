@@ -3,13 +3,17 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 
 from accounts.forms import SignUpForm
-from mainsite.models import Chat
+from mainsite.models import Chat, Service
 
 
 @login_required
 def profile(request):
-    queries = Chat.objects.filter(user=request.user)
-    return render(request, "profile.html", {"queries": queries})
+    if request.user.is_staff:
+        queries = Chat.objects.all()
+    else:
+        queries = Chat.objects.filter(user=request.user)
+    services = Service.objects.all()
+    return render(request, "profile.html", {"queries": queries, "services": services})
 
 
 def sign_up(request):
