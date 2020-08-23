@@ -21,6 +21,63 @@
   </div>
   <div class="container">
     {% if user.is_authenticated %}
+    <section id="contact">
+      <div class="form">
+        <div id="sendmessage">Your message has been sent. Thank you!</div>
+        <div id="errormessage"></div>
+        <form
+          action="/contactform/"
+          method="post"
+          role="form"
+          class="contactForm"
+        >
+          {% csrf_token %}
+          <div class="form-group">
+            <select
+              class="form-control"
+              id="service"
+              name="service"
+              data-rule="required"
+              data-msg="Please choose a valid service"
+            >
+              <option value="" disabled selected>Service</option>
+              {% for service in services %}
+              <option value="{{ service.pk}}">{{ service }}</option>
+              {% endfor %}
+            </select>
+            <div class="validation"></div>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="subject"
+              id="subject"
+              placeholder="Subject"
+              data-rule="minlen:4"
+              data-msg="Please enter at least 8 chars of subject"
+            />
+            <div class="validation"></div>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              name="message"
+              rows="5"
+              data-rule="required"
+              data-msg="Please write something for us"
+              placeholder="Message"
+            ></textarea>
+            <div class="validation"></div>
+          </div>
+          <div class="text-center">
+            <button type="submit" title="Send Message">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
     <h3>Your Chats</h3>
     <div class="container">
       <div class="card-columns">
@@ -32,8 +89,10 @@
             on {{ query.created_at }}
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{ query.subject }}</h5>
+            <h5 class="card-title">{{ query.service }}</h5>
             <p class="card-text">
+              <strong>Subject:</strong> <i>{{ query.subject }}</i>
+              <br />
               <strong>Resolved: {{ query.resolved }}</strong>
               <br />
               <a href="{% url 'query' query.pk %}">Continue Chat</a>
