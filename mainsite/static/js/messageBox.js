@@ -32,12 +32,14 @@ jQuery(document).ready(function ($) {
   });
 
   // Scroll to the input box
-  $("html, body").animate(
-    {
-      scrollTop: $("#chatBox")[0].scrollHeight,
-    },
-    1000
-  );
+  if (document.getElementById("chatBox")) {
+    $("html, body").animate(
+      {
+        scrollTop: $("#chatBox")[0].scrollHeight,
+      },
+      1000
+    );
+  }
 
   // Message Box
   $("form.messageBox").submit(function () {
