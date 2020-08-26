@@ -143,8 +143,8 @@ STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, "static"),
     "caimconsulting/static/",
     "mainsite/static/",
-    "blog/static/",
-    "accounts/static/",
+    # "blog/static/",
+    # "accounts/static/",
 ]
 
 # Simplified static file serving.
