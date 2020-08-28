@@ -10,12 +10,12 @@ def blog_index(request):
 
 
 def blog_page(request, blog_id):
-    blog = BlogPost.objects.get(pk=blog_id)
+    blog = get_object_or_404(BlogPost, pk=blog_id)
     return render(request, "blog_page.html", {"blog": blog})
 
 
 def catg_page(request, catg_id):
-    category = Category.objects.get(pk=catg_id)
+    category = get_object_or_404(Category, pk=catg_id)
     blogs_in_category = BlogPost.objects.filter(category=category)
     return render(
         request,

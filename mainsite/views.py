@@ -47,10 +47,10 @@ def messageinput(request):
 def queries(request, chat_id):
     if request.method == "GET":
         try:
-            chat = Chat.objects.get(pk=chat_id, user=request.user)
+            chat = get_object_or_404(Chat, pk=chat_id, user=request.user)
             allowed = True
         except:
-            chat = Chat.objects.get(pk=chat_id)
+            chat = get_object_or_404(Chat, pk=chat_id)
             allowed = request.user.is_staff
         if allowed:
             messages = Message.objects.filter(chat=chat)
