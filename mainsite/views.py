@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from mainsite.forms import QueryForm
 from mainsite.models import Chat, Message, Service

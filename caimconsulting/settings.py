@@ -10,16 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+import os
+
+# To use local environment variables
+from dotenv import load_dotenv
+
 # https://devcenter.heroku.com/articles/django-app-configuration
 import django_heroku
-
-import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# To use local environment variables
-from dotenv import load_dotenv
 
 dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
