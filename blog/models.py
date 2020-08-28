@@ -8,6 +8,7 @@ class BlogPost(models.Model):
     published_datetime = models.DateTimeField(auto_now_add=True)
     last_modified_datetime = models.DateTimeField(auto_now=True)
     picture = models.ImageField(upload_to="blogimages/%Y/%m/%d/", null=True, blank=True)
+    gdrive = models.URLField(blank=True, null=True)
     category = models.ForeignKey("Category", on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=50)
     author = models.ForeignKey(
