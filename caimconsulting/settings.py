@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "cloudinary_storage",  # https://pypi.org/project/django-cloudinary-storage/ (using only for media)
+    "cloudinary",
     "tinymce",
 ]
 
@@ -156,6 +158,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#media-url
 MEDIA_URL = "/media/"
+
+# For storing user-uploaded media
+# https://www.dothedev.com/blog/heroku-django-store-your-uploaded-media-files-for-free/
+# https://pypi.org/project/django-cloudinary-storage/
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
+    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
+}
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # Login redirect URL for accounts
 LOGIN_REDIRECT_URL = "profile"
