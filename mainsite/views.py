@@ -49,7 +49,7 @@ def queries(request, chat_id):
         try:
             chat = get_object_or_404(Chat, pk=chat_id, user=request.user)
             allowed = True
-        except:
+        except Exception as e:
             chat = get_object_or_404(Chat, pk=chat_id)
             allowed = request.user.is_staff
         if allowed:
