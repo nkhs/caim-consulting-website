@@ -170,5 +170,6 @@ django_heroku.settings(locals())
 
 # Heroku Postgres requires SSL, but SQLite doesn’t need or expect it.
 # Added for local development using SQLite
-options = DATABASES["default"].get("OPTIONS", {})
+# https://blog.usejournal.com/deploying-django-to-heroku-connecting-heroku-postgres-fcc960d290d1
+options = DATABASES["default"].get("OPTIONS", {})  # noqa: F821
 options.pop("sslmode", None)
