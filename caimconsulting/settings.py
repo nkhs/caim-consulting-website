@@ -163,6 +163,8 @@ LOGIN_REDIRECT_URL = "profile"
 AUTH_USER_MODEL = "accounts.User"
 
 # Activate Django-Heroku.
+# Refer: https://github.com/heroku/django-heroku/blob/master/django_heroku/core.py
+# for full information on what settings are overwritten
 django_heroku.settings(locals())
 
 # Heroku Postgres requires SSL, but SQLite doesn’t need or expect it.
