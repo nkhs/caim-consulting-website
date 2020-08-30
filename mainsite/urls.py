@@ -8,4 +8,5 @@ urlpatterns = [
     path("contactform/", views.contactform),
     path("messageinput/", views.messageinput),
     path("query/<int:chat_id>/", views.queries, name="query"),
+    path("board/<slug:member>/", views.advisory_board, name="advisory_board"),
 ]

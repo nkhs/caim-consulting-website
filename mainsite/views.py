@@ -14,6 +14,10 @@ def privacy_policy(request):
     return render(request, "privacy_policy.html")
 
 
+def advisory_board(request, member):
+    return render(request, f"board/{member}.html")
+
+
 def contactform(request):
     if request.method == "POST":
         form = QueryForm(request.POST)
