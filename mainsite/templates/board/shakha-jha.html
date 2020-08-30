@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<main>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class="avatar mx-auto">
+          <img
+            src="{% static 'img/shakha-jha.jpg' %}"
+            class="rounded-circle z-depth-1"
+            alt="Shakha Jha picture"
+          />
+        </div>
+        <h5 class="font-weight-bold mt-4 mb-3">Shakha Jha</h5>
+        <p class="text-uppercase blue-text">
+          <strong>Associate, Samvad Partners</strong>
+        </p>
+      </div>
+      <div class="col-lg-4 col-md-7 mb-lg-0 mb-5">
+        <p class="grey-text">
+          Shakha Jha is a strong corporate law professional with a demonstrated
+          working experience in some of the leading law firms in India as well
+          as abroad offering legal services in complex and high value
+          transactions in the Private Equity and M&A practice. Currently
+          enrolled with the Bar Council of Maharashtra & Goa, she graduated from
+          Symbiosis law school, Pune and holds an LL.M in Corporate and
+          financial services from National University of Singapore.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

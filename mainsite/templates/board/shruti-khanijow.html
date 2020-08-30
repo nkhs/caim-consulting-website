@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<main>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class="avatar mx-auto">
+          <img
+            src="{% static 'img/shruti-khanijow.jpg' %}"
+            class="rounded-circle z-depth-1"
+            alt="Shruti Khanijow picture"
+          />
+        </div>
+        <h5 class="font-weight-bold mt-4 mb-3">Shruti Khanijow</h5>
+        <p class="text-uppercase blue-text">
+          <strong>Principal Associate, Khaitan & Co.</strong>
+        </p>
+      </div>
+      <div class="col-lg-4 col-md-7 mb-lg-0 mb-5">
+        <p class="grey-text">
+          Currently working as a principal associate in the commercial disputes
+          practice of Khaitan & Co., Shruti has represented private parties and
+          State entities in institutional (ICC, LCIA and SIAC) and ad hoc
+          arbitrations seated in India and abroad. She is experienced in
+          advising clients on construction and energy arbitrations, shareholder
+          disputes, product liability litigation, corporate criminal liability
+          and disparagement and defamation claims. She holds an LL.M. in
+          International Law from University of Cambridge and was a member of the
+          editorial board of Cambridge International Law Journal and Cambridge
+          Law Review.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
