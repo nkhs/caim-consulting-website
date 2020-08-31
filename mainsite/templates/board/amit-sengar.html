@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<main>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class="avatar mx-auto">
+          <img
+            src="{% static 'img/amit-sengar.jpg' %}"
+            class="rounded-circle z-depth-1"
+            alt="Amit Sengar picture"
+          />
+        </div>
+        <h5 class="font-weight-bold mt-4 mb-3">Amit Sengar</h5>
+        <p class="text-uppercase blue-text">
+          <strong>Partner, Amit Sabarish & Associates, New Delhi</strong>
+        </p>
+      </div>
+      <div class="col-lg-4 col-md-7 mb-lg-0 mb-5">
+        <p class="grey-text">
+          Mr. Amit Sengar has a decade long experience in direct taxes and
+          currently engaged as a partner in a Chartered Accountancy firm based
+          out of Delhi, India. In the recent past, he has also assumed several
+          roles of Senior Executive, Assistant Manager, Internal Auditor, etc.
+          in reputed multinational companies like Accenture and Serco.
+          Additionally, he has a considerable work experience in the financial
+          component of the healthcare sector as he has been a part of Apollo
+          Hospitals in West Bengal.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

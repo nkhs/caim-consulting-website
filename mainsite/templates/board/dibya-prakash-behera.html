@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<main>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class="avatar mx-auto">
+          <img
+            src="{% static 'img/dibya-prakash-behera.jpg' %}"
+            class="rounded-circle z-depth-1"
+            alt="Dibya Prakash Behera picture"
+          />
+        </div>
+        <h5 class="font-weight-bold mt-4 mb-3">Dibya Prakash Behera</h5>
+        <p class="text-uppercase blue-text">
+          <strong>Associate at Nishith Desai Associates</strong>
+        </p>
+      </div>
+      <div class="col-lg-4 col-md-7 mb-lg-0 mb-5">
+        <p class="grey-text">
+          Mr. Dibya is employed as an Associate at Nishith Desai Associates in
+          its Investment Funds practice team. Besides, he is also avidly
+          interested in domestic and international taxation laws. Having
+          graduated from the National Law University, Ranchi, he holds an
+          impressive profile with top tier law firm internships, national and
+          international mooting achievements, and an enviable set of
+          publications. With close to 25 publications, his articles feature in
+          some of the world's most renowned blogs.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

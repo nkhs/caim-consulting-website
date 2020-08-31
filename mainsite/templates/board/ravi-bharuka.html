@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<main>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class="avatar mx-auto">
+          <img
+            src="{% static 'img/ravi-bharuka.jpg' %}"
+            class="rounded-circle z-depth-1"
+            alt="Ravi Bharuka picture"
+          />
+        </div>
+        <h5 class="font-weight-bold mt-4 mb-3">Ravi Bharuka</h5>
+        <p class="text-uppercase blue-text">
+          <strong>Advocate on Record, Supreme Court of India</strong>
+        </p>
+      </div>
+      <div class="col-lg-4 col-md-7 mb-lg-0 mb-5">
+        <p class="grey-text">
+          Mr. Ravi Bharuka is a Partner at GDG LAW LLP and a 2013 law graduate
+          from ILS Law College, Pune. He has worked with GDG since then and has
+          successfully worked on various commercial disputes including
+          arbitration involving heavy financial stakes and complex questions of
+          facts and law before the Arbitral Tribunal (both Institutional and ad
+          hoc), High Court and Supreme Court. He has been declared as an
+          Advocate-on-Record by the Supreme Court of India in May 2020. He is
+          also an Advocate-on-Record at the Patna High Court since August, 2017.
+          Ravi has also completed membership course of Chartered Institute of
+          Arbitrator in March 2017.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

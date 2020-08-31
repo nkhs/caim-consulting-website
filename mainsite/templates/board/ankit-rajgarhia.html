@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<main>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class="avatar mx-auto">
+          <img
+            src="{% static 'img/ankit-rajgarhia.jpg' %}"
+            class="rounded-circle z-depth-1"
+            alt="Ankit Rajgarhia picture"
+          />
+        </div>
+        <h5 class="font-weight-bold mt-4 mb-3">Ankit Rajgarhia</h5>
+        <p class="text-uppercase blue-text">
+          <strong>Senior Associate, Karanjawala & Co. Advocates.</strong>
+        </p>
+      </div>
+      <div class="col-lg-4 col-md-7 mb-lg-0 mb-5">
+        <p class="grey-text">
+          Mr. Ankit Rajgarhia is a Senior Associate at Karanjawala & Co.
+          Advocates and works with the Civil and Commercial litigation,
+          Arbitration and Dispute Resolution team of the firm. Having graduated
+          from Symbiosis Law School, Pune, Ankit has represented several
+          domestic and international clients such as e-commerce, airlines, real
+          estate, pharmacy in complex commercial litigations. Nevertheless, he
+          has to his credit acclaimed articles and viewpoints that have been
+          published and quotes on reputed legal news reporting platforms.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
