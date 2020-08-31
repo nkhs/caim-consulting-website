@@ -16,7 +16,7 @@ def blog_page(request, blog_id):
 
 def catg_page(request, catg_id):
     category = get_object_or_404(Category, pk=catg_id)
-    blogs_in_category = BlogPost.objects.filter(category=category)
+    blogs_in_category = BlogPost.objects.filter(category=category, draft=False)
     return render(
         request,
         "category_page.html",
