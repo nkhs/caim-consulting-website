@@ -139,4 +139,22 @@
     loop: true,
     items: 1,
   });
+
+  // Board carousel (uses the Owl Carousel library)
+  $(".board-carousel").owlCarousel({
+    autoplay: true,
+    responsiveClass: true,
+    loop: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 3,
+      },
+      1000: {
+        items: 4,
+      },
+    },
+  });
 })(jQuery);
