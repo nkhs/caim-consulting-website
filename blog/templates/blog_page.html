@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block page_content %}
 <!-- prettier-ignore -->
 {% load static %}
+{% load tz %}
 
 <main id="main">
   <div class="container">
@@ -12,7 +13,10 @@
       by <var>{{ blog.author_name }}</var>
       <br />
       <!-- Date/Time -->
-      <span class="small">Posted on {{ blog.published_datetime }}</span>
+      <span class="small">
+        <!-- prettier-ignore -->
+        Posted on {{ blog.published_datetime|timezone:"Asia/Kolkata"|date:"D, d F, Y, h:i A e" }}
+      </span>
     </p>
 
     <hr />
