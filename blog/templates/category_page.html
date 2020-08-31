@@ -19,7 +19,7 @@
     <div class="card-columns">
       {% for blog in blogs_in_category %}
       <div class="card bg-light mb-3" style="max-width: 18rem;">
-        <div class="card-header">By {{ blog.author }}</div>
+        <div class="card-header">By {{ blog.author_name }}</div>
         <div class="card-body">
           <h5 class="card-title">{{ blog.title }}</h5>
           <p class="card-text">
