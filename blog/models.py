@@ -10,14 +10,21 @@ class BlogPost(models.Model):
     picture = models.ImageField(upload_to="blogimages/%Y/%m/%d/", null=True, blank=True)
     gdrive = models.URLField(blank=True, null=True)
     category = models.ForeignKey("Category", on_delete=models.SET_NULL, null=True)
-    title = models.CharField(max_length=50)
-    author = models.ForeignKey(
+    title = models.CharField(max_length=200)
+    uploaded_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1
     )
+    author_name = models.CharField(max_length=50, null=True, blank=True)
+    draft = models.BooleanField(default=False)
     content = HTMLField()
 
     def __str__(self):
         return f"{self.category}: {self.title}"
+
+    def save(self, *args, **kwargs):
+        if not self.author_name:
+            self.author_name = self.uploaded_by.get_full_name()
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = "Blog Post"
