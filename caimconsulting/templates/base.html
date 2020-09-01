@@ -90,8 +90,13 @@
     </header>
     <!-- #header -->
     <!-- prettier-ignore -->
+    {% load tz %}
+    {% timezone "Asia/Kolkata" %}
+
     {% block page_content %}
     {% endblock %}
+
+    {% endtimezone %}
     <!--==========================
       Footer
     ============================-->
