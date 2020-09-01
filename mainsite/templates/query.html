@@ -12,7 +12,8 @@
   <div class="container">
     <div class="intro-info">
       {% if allowed %}
-      <h2>Query: {{ messages.0.chat.pk }}</h2>
+      <h2>Subject: {{ messages.0.chat.subject }}</h2>
+      <h4>Service: {{ messages.0.chat.service }}</h4>
       <div>
         <a href="#inputMessageBox" class="btn-get-started scrollto">
           Go to message box
