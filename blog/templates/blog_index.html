@@ -23,12 +23,11 @@
       <div class="card-columns">
         {% for category in categories %}
         <div class="card bg-light mb-3" style="max-width: 18rem;">
-          <div class="card-header">{{ category.name }}</div>
           <div class="card-body">
-            <h5 class="card-title">{{ category.name }}</h5>
+            <h2 class="card-title">{{ category.name }}</h2>
             <p class="card-text">
               <a href="{% url 'catgpage' category.pk %}">
-                Go to {{ category.name }}
+                Read Blogs
               </a>
             </p>
           </div>
