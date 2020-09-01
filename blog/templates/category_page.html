@@ -19,13 +19,23 @@
     <div class="card-columns">
       {% for blog in blogs_in_category %}
       <div class="card bg-light mb-3" style="max-width: 18rem;">
-        <div class="card-header">By {{ blog.author_name }}</div>
+        {% if blog.picture %}
+        <img
+          class="card-img-top"
+          src="{{ blog.picture.url }}"
+          alt="{{ blog.title }} Picture"
+        />
+        {% endif %}
+        <div class="card-header">{{ blog.title }}</div>
         <div class="card-body">
-          <h5 class="card-title">{{ blog.title }}</h5>
+          <h5 class="card-title">{{ blog.category }}</h5>
           <p class="card-text">
             <a href="{% url 'blogpage' blog.pk %}">
-              Read {{ blog.title }}
+              Read Blog
             </a>
+          </p>
+          <p class="card-text">
+            <small class="text-muted">By {{ blog.author_name }}</small>
           </p>
         </div>
       </div>
