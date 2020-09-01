@@ -21,6 +21,9 @@ class Chat(models.Model):
     def __str__(self):
         return f"{self.user}: {self.subject}"
 
+    class Meta:
+        ordering = ["-created_at"]
+
 
 class Message(models.Model):
     chat = models.ForeignKey("Chat", on_delete=models.CASCADE)
