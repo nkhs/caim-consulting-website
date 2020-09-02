@@ -50,7 +50,7 @@ def messageinput(request):
             return JsonResponse({"error": e})
 
 
-def queries(request, chat_id):
+def chats(request, chat_id):
     if request.method == "GET":
         try:
             chat = get_object_or_404(Chat, pk=chat_id, user=request.user)

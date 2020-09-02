@@ -7,6 +7,6 @@ urlpatterns = [
     path("privacy/", views.privacy_policy, name="privacy"),
     path("contactform/", views.contactform),
     path("messageinput/", views.messageinput),
-    path("query/<int:chat_id>/", views.queries, name="query"),
+    path("chat/<int:chat_id>/", views.chats, name="chat"),
     path("board/<slug:member>/", views.advisory_board, name="advisory_board"),
 ]

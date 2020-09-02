@@ -36,12 +36,12 @@ class ChatAdmin(admin.ModelAdmin):
     def mark_as_resolved(self, request, queryset):
         queryset.update(resolved=True)
 
-    mark_as_resolved.short_description = "Mark selected queries as resolved"
+    mark_as_resolved.short_description = "Mark selected chats as resolved"
 
     def mark_as_unresolved(self, request, queryset):
         queryset.update(resolved=False)
 
-    mark_as_unresolved.short_description = "Mark selected queries as unresolved"
+    mark_as_unresolved.short_description = "Mark selected chats as unresolved"
 
     def has_add_permission(self, request, obj=None):
         return False
