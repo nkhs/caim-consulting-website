@@ -2,12 +2,13 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 
 from mainsite.forms import QueryForm
-from mainsite.models import Chat, Message, Service
+from mainsite.models import Chat, Message, Service, Advisor
 
 
 def index(request):
     services = Service.objects.all()
-    return render(request, "index.html", {"services": services})
+    advisors = Advisor.objects.all()
+    return render(request, "index.html", {"services": services, "advisors": advisors})
 
 
 def privacy_policy(request):
