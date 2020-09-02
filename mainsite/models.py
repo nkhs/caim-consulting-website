@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django.conf import settings
 from django.db import models
+from django.template.defaultfilters import slugify
 
 
 class Service(models.Model):
@@ -43,3 +44,19 @@ class Message(models.Model):
 
     class Meta:
         unique_together = (("chat", "offset"),)
+
+
+class Advisor(models.Model):
+    name = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=50, unique=True, editable=False)
+    picture = models.ImageField(upload_to="advisors/")
+    position = models.CharField(max_length=50)
+    linkedin = models.URLField()
+    bio = models.TextField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ["name"]

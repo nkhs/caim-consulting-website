@@ -1,10 +1,15 @@
 from django.contrib import admin
 
-from mainsite.models import Chat, Message, Service
+from mainsite.models import Chat, Message, Service, Advisor
 
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Advisor)
+class AdvisorAdmin(admin.ModelAdmin):
     pass
 
 
