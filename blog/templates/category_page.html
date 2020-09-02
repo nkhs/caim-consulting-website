@@ -5,17 +5,21 @@
 <!--==========================
     Intro Section
   ============================-->
-<section id="intro" class="clearfix">
+<!-- <section id="intro" class="clearfix">
   <div class="container">
     <div class="intro-info">
       <h2>{{ category.name }}</h2>
     </div>
   </div>
-</section>
+</section> -->
 <!-- #intro -->
 
 <main id="main">
+  <div class="container text-center">
+    <h1 class="display-1">{{ category.name }}</h1>
+  </div>
   <div class="container">
+    {% if blogs_in_category %}
     <div class="card-columns">
       {% for blog in blogs_in_category %}
       <div class="card bg-light mb-3" style="max-width: 18rem;">
@@ -26,21 +30,27 @@
           alt="{{ blog.title }} Picture"
         />
         {% endif %}
-        <div class="card-header">{{ blog.title }}</div>
+        <div class="card-header text-center">{{ blog.title }}</div>
         <div class="card-body">
-          <h5 class="card-title">{{ blog.category }}</h5>
-          <p class="card-text">
-            <a href="{% url 'blogpage' blog.pk %}">
-              Read Blog
-            </a>
-          </p>
+          <!-- <h5 class="card-title">{{ blog.category }}</h5> -->
           <p class="card-text">
             <small class="text-muted">By {{ blog.author_name }}</small>
           </p>
+          <a
+            href="{% url 'blogpage' blog.pk %}"
+            class="btn btn-primary btn-sm card-link"
+          >
+            Read More
+          </a>
         </div>
       </div>
       {% endfor %}
     </div>
+    {% else %}
+    <div class="container text-center">
+      <h1 class="display-4">Nothing here yet</h1>
+    </div>
+    {% endif %}
   </div>
 </main>
 
