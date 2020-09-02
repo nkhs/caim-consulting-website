@@ -6,7 +6,12 @@ from blog.models import BlogPost, Category
 # Create your views here.
 def blog_index(request):
     categories = Category.objects.all()
-    return render(request, "blog_index.html", {"categories": categories})
+    latest_3_blogs = BlogPost.objects.all().order_by("-id")[:3]
+    return render(
+        request,
+        "blog_index.html",
+        {"categories": categories, "latest_3_blogs": latest_3_blogs},
+    )
 
 
 def blog_page(request, blog_id):

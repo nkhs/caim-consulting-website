@@ -5,38 +5,75 @@
 <!--==========================
     Intro Section
   ============================-->
-<section id="intro" class="clearfix">
+<!-- <section id="intro" class="clearfix">
   <div class="container">
     <div class="intro-info">
       <h2>Blog Categories</h2>
     </div>
   </div>
-</section>
+</section> -->
 <!-- #intro -->
 
 <main id="main">
   <!--==========================
-      Category Section
+      Recent Blogs Section
     ============================-->
   <section id="portfolio" class="clearfix">
     <div class="container">
+      <h2 class="text-center">Recent Publications</h2>
       <div class="card-columns">
-        {% for category in categories %}
+        {% for blog in latest_3_blogs %}
         <div class="card bg-light mb-3" style="max-width: 18rem;">
+          {% if blog.picture %}
+          <img
+            class="card-img-top"
+            src="{{ blog.picture.url }}"
+            alt="{{ blog.title }} Picture"
+          />
+          {% endif %}
+          <div class="card-header text-center">{{ blog.title }}</div>
           <div class="card-body">
-            <h2 class="card-title">{{ category.name }}</h2>
+            <h5 class="card-title">{{ blog.category }}</h5>
             <p class="card-text">
-              <a href="{% url 'catgpage' category.pk %}">
-                Read Blogs
-              </a>
+              <small class="text-muted">By {{ blog.author_name }}</small>
             </p>
+            <a
+              href="{% url 'blogpage' blog.pk %}"
+              class="btn btn-primary btn-sm card-link"
+            >
+              Read More
+            </a>
           </div>
         </div>
         {% endfor %}
       </div>
     </div>
   </section>
-  <!-- #portfolio -->
+  <!-- #recent -->
+
+  <!--==========================
+      Category Section
+    ============================-->
+  <section id="portfolio" class="clearfix">
+    <div class="container">
+      <h2 class="text-center">Publications Categories</h2>
+      <div class="card-columns">
+        {% for category in categories %}
+        <a href="{% url 'catgpage' category.pk %}">
+          <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h2 class="card-title">{{ category.name }}</h2>
+              <!-- <p class="card-text">
+                Read More
+              </p> -->
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- #category -->
 </main>
 
 {% endblock %}
