@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from blog.models import BlogPost, Category
+from blog.models import Publication, Category
 
 
-@admin.register(BlogPost)
-class BlogPostAdmin(admin.ModelAdmin):
+@admin.register(Publication)
+class PublicationAdmin(admin.ModelAdmin):
     list_display = (
         "published_datetime",
         "last_modified_datetime",

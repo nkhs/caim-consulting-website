@@ -4,7 +4,7 @@ from django.db import models
 from tinymce.models import HTMLField
 
 
-class BlogPost(models.Model):
+class Publication(models.Model):
     published_datetime = models.DateTimeField(auto_now_add=True)
     last_modified_datetime = models.DateTimeField(auto_now=True)
     picture = models.ImageField(upload_to="blogimages/%Y/%m/%d/", null=True, blank=True)
@@ -27,8 +27,8 @@ class BlogPost(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        verbose_name = "Blog Post"
-        verbose_name_plural = "Blog Posts"
+        verbose_name = "Publication"
+        verbose_name_plural = "Publications"
         ordering = ["-published_datetime"]
 
 

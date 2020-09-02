@@ -16,29 +16,29 @@
 
 <main id="main">
   <!--==========================
-      Recent Blogs Section
+      Recent Publications Section
     ============================-->
   <section id="portfolio" class="clearfix">
     <div class="container">
-      <h2 class="text-center">Recent Publications</h2>
+      <h2 class="text-center">Latest Publications</h2>
       <div class="card-columns">
-        {% for blog in latest_3_blogs %}
+        {% for publication in latest_3_publications %}
         <div class="card bg-light mb-3" style="max-width: 18rem;">
-          {% if blog.picture %}
+          {% if publication.picture %}
           <img
             class="card-img-top"
-            src="{{ blog.picture.url }}"
-            alt="{{ blog.title }} Picture"
+            src="{{ publication.picture.url }}"
+            alt="{{ publication.title }} Picture"
           />
           {% endif %}
-          <div class="card-header text-center">{{ blog.title }}</div>
+          <div class="card-header text-center">{{ publication.title }}</div>
           <div class="card-body">
-            <h5 class="card-title">{{ blog.category }}</h5>
+            <h5 class="card-title">{{ publication.category }}</h5>
             <p class="card-text">
-              <small class="text-muted">By {{ blog.author_name }}</small>
+              <small class="text-muted">By {{ publication.author_name }}</small>
             </p>
             <a
-              href="{% url 'blogpage' blog.pk %}"
+              href="{% url 'publicationpage' publication.pk %}"
               class="btn btn-primary btn-sm card-link"
             >
               Read More

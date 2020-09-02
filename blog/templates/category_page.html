@@ -19,25 +19,25 @@
     <h1 class="display-1">{{ category.name }}</h1>
   </div>
   <div class="container">
-    {% if blogs_in_category %}
+    {% if publications_in_category %}
     <div class="card-columns">
-      {% for blog in blogs_in_category %}
+      {% for publication in publications_in_category %}
       <div class="card bg-light mb-3" style="max-width: 18rem;">
-        {% if blog.picture %}
+        {% if publication.picture %}
         <img
           class="card-img-top"
-          src="{{ blog.picture.url }}"
-          alt="{{ blog.title }} Picture"
+          src="{{ publication.picture.url }}"
+          alt="{{ publication.title }} Picture"
         />
         {% endif %}
-        <div class="card-header text-center">{{ blog.title }}</div>
+        <div class="card-header text-center">{{ publication.title }}</div>
         <div class="card-body">
-          <!-- <h5 class="card-title">{{ blog.category }}</h5> -->
+          <!-- <h5 class="card-title">{{ publication.category }}</h5> -->
           <p class="card-text">
-            <small class="text-muted">By {{ blog.author_name }}</small>
+            <small class="text-muted">By {{ publication.author_name }}</small>
           </p>
           <a
-            href="{% url 'blogpage' blog.pk %}"
+            href="{% url 'publicationpage' publication.pk %}"
             class="btn btn-primary btn-sm card-link"
           >
             Read More
