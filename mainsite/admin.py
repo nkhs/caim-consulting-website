@@ -10,7 +10,13 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(Advisor)
 class AdvisorAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        "pk",
+        "name",
+        "position",
+        "linkedin",
+    )
+    search_fields = ("name",)
 
 
 @admin.register(Chat)
