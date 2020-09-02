@@ -6,10 +6,16 @@
   <div class="container">
     <div class="intro-info">
       {% if user.is_authenticated %}
-      <h2>Welcome {{ user.get_short_name }}</h2>
-      <form action="/accounts/logout">
-        <button type="submit">Log Out</button>
-      </form>
+      <div class="row">
+        <div class="col-lg-10 mb-4">
+          <h2>Welcome {{ user.get_short_name }}</h2>
+        </div>
+        <div class="col-lg-2 mb-4">
+          <form action="/accounts/logout">
+            <button type="submit" class="btn btn-dark">Log Out</button>
+          </form>
+        </div>
+      </div>
       {% else %}
       <form id="login-page" action="{% url 'profile' %}">
         <button type="submit" form="login-page" title="Login">
