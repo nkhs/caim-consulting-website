@@ -9,11 +9,21 @@ from mainsite.models import Chat, Service
 @login_required
 def profile(request):
     if request.user.is_staff:
-        queries = Chat.objects.all()
+        chats = Chat.objects.all()
     else:
-        queries = Chat.objects.filter(user=request.user)
+        chats = Chat.objects.filter(user=request.user)
     services = Service.objects.all()
-    return render(request, "profile.html", {"queries": queries, "services": services})
+    resolved_chats = chats.filter(resolved=True)
+    unresolved_chats = chats.filter(resolved=False)
+    return render(
+        request,
+        "profile.html",
+        {
+            "unresolved_chats": unresolved_chats,
+            "resolved_chats": resolved_chats,
+            "services": services,
+        },
+    )
 
 
 def sign_up(request):

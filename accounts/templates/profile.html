@@ -29,7 +29,7 @@
       {% else %}
       <form id="login-page" action="{% url 'profile' %}">
         <button type="submit" form="login-page" title="Login">
-          Login to see your queries
+          Login to see your chats
         </button>
       </form>
       {% endif %}
@@ -97,30 +97,60 @@
       </div>
     </div>
     <br />
+    {% if unresolved_chats %}
     <div class="container">
-      <h3>Your Chats</h3>
+      <h3>Current Chats</h3>
       <div class="card-columns">
-        {% for query in queries %}
+        {% for chat in unresolved_chats %}
         <div class="card bg-light mb-3" style="max-width: 18rem;">
           <div class="card-header">
             By
-            <var>{{ query.user }}</var>
-            on {{ query.created_at }}
+            <var>{{ chat.user }}</var>
+            on {{ chat.created_at }}
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{ query.service }}</h5>
+            <h5 class="card-title">{{ chat.service }}</h5>
             <p class="card-text">
-              <strong>Subject:</strong> <i>{{ query.subject }}</i>
+              <strong>Subject:</strong> <i>{{ chat.subject }}</i>
               <br />
-              <strong>Resolved: {{ query.resolved }}</strong>
+              <strong>Resolved: {{ chat.resolved }}</strong>
               <br />
-              <a href="{% url 'query' query.pk %}">Continue Chat</a>
+              <a href="{% url 'chat' chat.pk %}">Continue Chat</a>
             </p>
           </div>
         </div>
         {% endfor %}
       </div>
     </div>
+    <!-- prettier-ignore -->
+    {% endif %}
+    {% if resolved_chats %}
+    <div class="container">
+      <h3>Resolved Chats</h3>
+      <div class="card-columns">
+        {% for chat in resolved_chats %}
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">
+            By
+            <var>{{ chat.user }}</var>
+            on {{ chat.created_at }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ chat.service }}</h5>
+            <p class="card-text">
+              <strong>Subject:</strong> <i>{{ chat.subject }}</i>
+              <br />
+              <strong>Resolved: {{ chat.resolved }}</strong>
+              <br />
+              <a href="{% url 'chat' chat.pk %}">Continue Chat</a>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- prettier-ignore -->
+    {% endif %}
     {% endif %}
   </div>
 </main>
