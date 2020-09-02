@@ -16,7 +16,8 @@ def privacy_policy(request):
 
 
 def advisory_board(request, member):
-    return render(request, f"board/{member}.html")
+    advisor = get_object_or_404(Advisor, slug=member)
+    return render(request, "advisor_bio.html", {"advisor": advisor})
 
 
 def contactform(request):
