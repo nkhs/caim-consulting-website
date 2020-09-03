@@ -55,10 +55,13 @@ def subscription(request):
     if request.method == "POST":
         try:
             email = request.POST.get("email")
-            subs = Subscriber(email=email)
-            subs.save()
-        except IntegrityError as e:
+            if email:
+                subs = Subscriber(email=email)
+                subs.save()
+        except IntegrityError:
             print("Email already in subscriptions")
+        except Exception as e:
+            print(e)
         return redirect(index)
 
 
