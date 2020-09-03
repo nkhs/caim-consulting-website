@@ -1,11 +1,24 @@
 from django.contrib import admin
 
-from mainsite.models import Chat, Message, Service, Advisor
+from mainsite.models import Advisor, Chat, Message, Service, Subscriber
 
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(Subscriber)
+class SubscriberAdmin(admin.ModelAdmin):
+    list_display = (
+        "pk",
+        "datetime",
+        "email",
+    )
+    search_fields = ("email",)
+
+    def has_change_permission(self, request, obj=None):
+        return False
 
 
 @admin.register(Advisor)

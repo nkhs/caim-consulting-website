@@ -1,8 +1,9 @@
+from django.db import IntegrityError
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 
 from mainsite.forms import QueryForm
-from mainsite.models import Chat, Message, Service, Advisor
+from mainsite.models import Advisor, Chat, Message, Service, Subscriber
 
 
 def index(request):
@@ -48,6 +49,17 @@ def messageinput(request):
                 return JsonResponse({"msg": "Cannot create Message"})
         except Exception as e:
             return JsonResponse({"error": e})
+
+
+def subscription(request):
+    if request.method == "POST":
+        try:
+            email = request.POST.get("email")
+            subs = Subscriber(email=email)
+            subs.save()
+        except IntegrityError as e:
+            print("Email already in subscriptions")
+        return redirect(index)
 
 
 def chats(request, chat_id):

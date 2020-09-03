@@ -63,3 +63,11 @@ class Advisor(models.Model):
 
     class Meta:
         ordering = ["name"]
+
+
+class Subscriber(models.Model):
+    datetime = models.DateTimeField(auto_now_add=True)
+    email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.email
