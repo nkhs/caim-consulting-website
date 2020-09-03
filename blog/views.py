@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 
-from blog.models import Publication, Category
+from blog.models import Category, Publication
 
 
 # Create your views here.
