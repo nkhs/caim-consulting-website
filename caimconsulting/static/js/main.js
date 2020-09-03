@@ -135,6 +135,7 @@
   // Team carousel (uses the Owl Carousel library)
   $(".team-carousel").owlCarousel({
     autoplay: true,
+    autoplayTimeout: 10000,
     dots: true,
     loop: true,
     items: 1,
