@@ -1013,7 +1013,7 @@ h6 {
   font-size: small;
 }
 .container-advisors{
-  height: 450px;
+  height: 420px;
   width: 300px;
   /* border: #111 1px solid; */
   margin-bottom: 20px;
@@ -1034,7 +1034,7 @@ h6 {
 .avatar-image{
   position: relative;
   margin-top: 50px;
-  height: 283px;
+  height: 260px;
   width: 260px;
   margin: auto;
 }
@@ -1073,7 +1073,7 @@ h6 {
   width: 250px;
   height: 200px;
   left:0;
-  top: 90px;
+  top: 70px;
   text-align: center;
   opacity: 0;
   transition: opacity .35s ease;
