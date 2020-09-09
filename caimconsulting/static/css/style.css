@@ -1004,10 +1004,114 @@ h6 {
 
 #board {
   background: #fff;
-  padding: 60px 0;
+  padding: 40px 0;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
+.blue-text{
+  font-size: small;
+}
+.container-advisors{
+  height: 420px;
+  width: 300px;
+  /* border: #111 1px solid; */
+  margin-bottom: 20px;
+}
+.advisors-profile{
+  height: 80px;
+  width: 50px;
+}
+.avatar{
+  padding:20px 20px 10px 20px;
+}
+.rounded-circle{
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+
+.avatar-image{
+  position: relative;
+  margin-top: 50px;
+  height: 260px;
+  width: 260px;
+  margin: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+.avatar-image:hover .overlay {
+  display: block;
+  background: rgba(15, 27, 192, 0.3);
+}
+
+.avatar-image img {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  left: 0;
+}
+
+
+
+.avatar-image:hover .title {
+  top: 90px;
+}
+
+.button-avatar {
+  position: absolute;
+  display: block;
+  width: 250px;
+  height: 200px;
+  left:0;
+  top: 70px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+  /* position: absolute;
+  width: 50px;
+  top: 90px;
+  left: 90px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease; */
+}
+
+
+.button-avatar a {
+  width: 200px;
+  display: block;
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 12px 48px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+  /* height: 50px;
+  width:fit-content;
+  padding: 10px 20px;
+  text-align: center;
+  color: white;
+  z-index: 1;
+  margin:20px; */
+}
+
+.avatar-image:hover .button-avatar {
+  opacity: 1;
+}
+
+
 
 /*
 #board .member {
