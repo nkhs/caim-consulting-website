@@ -2,12 +2,54 @@
 <!-- prettier-ignore -->
 {% load static %}
 
-<main id="main">
-  <div class="container">
-    <h2>Login</h2>
+<main id="main" >
+  <div class="container" id = "login">
+    <div class = "row justify-content-center">
+      <div class = "col-md-6 col-sm-12 col-xs-12">
+        <h2>Login</h2>
+        <div class = "form-login">
+          {{ form.non_field_errors }}
+          <form method="post">
+          <!-- prettier-ignore -->
+          {% csrf_token %}
+          {% for field in form %}
+          {{ field.errors }}
+            <div class="form-group ">
+              <label class=" col-form-label" for="{{ field.id_for_label }}">
+                {{ field.label }}
+              </label>
+              <div class="">
+                {{ field }}
+                <small class="form-text text-muted">
+                  {{field.help_text}}
+                </small>
+              </div>
+            </div>
+          {% endfor %}
+            <button class="btn btn-login" type="submit" style="margin-top: 30px;">Login</button>
+          </form>
+
+          <form action="{% url 'sign_up' %}">
+            <button class="btn btn-sign-up" type="submit">
+              New User? Sign Up <i class="fa fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+        
+
+      </div>
+
+      <div class = "col-md-6 col-xs-0 col-sm-0 ">
+        <img 
+          src = "{% static 'img/login.svg' %}" 
+          class="img-fluid">
+        
+      </div>
+    </div>
+    <!-- <h2>Login</h2>
     {{ form.non_field_errors }}
     <form method="post">
-      <!-- prettier-ignore -->
+      
       {% csrf_token %}
       {% for field in form %}
       {{ field.errors }}
@@ -24,16 +66,13 @@
       </div>
       {% endfor %}
       <button class="btn btn-primary btn-lg" type="submit">Login</button>
-    </form>
+    </form> -->
+
+    
+
   </div>
   <br />
-  <div class="container">
-    <form action="{% url 'sign_up' %}">
-      <button class="btn btn-secondary btn-sm" type="submit">
-        New User? Sign Up
-      </button>
-    </form>
-  </div>
+
 </main>
 
 {% endblock %}

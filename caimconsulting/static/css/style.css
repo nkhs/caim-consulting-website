@@ -1697,3 +1697,63 @@ h6 {
     font-size: 15px;
   }
 }
+
+
+#login {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding: 20px ;
+
+}
+
+#login h2{
+  text-align: center;
+}
+
+#login .form-login{
+  text-align: center;
+}
+
+#login form{
+  padding: 10px 12px;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  margin-right:auto ;
+  margin-left: auto;
+}
+
+#login input{
+  margin-bottom: 10px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #003166 ;
+}
+
+#login .btn-login{
+  border:2px solid #003166;
+  background-color: #004a99;
+  padding: 10px;
+  width: 100%;
+  color: white;
+}
+
+#login .btn-sign-up{
+  width: 100%;
+  text-align: center;
+}
+
+
+@media (max-width: 765px) {
+
+  #login{
+    margin-top: 20px;
+  }
+
+  #login .img-fluid{
+    display: none;
+  }
+}
