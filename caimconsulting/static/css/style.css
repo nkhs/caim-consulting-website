@@ -1015,6 +1015,8 @@ h6 {
   font-size: small;
 }
 .container-advisors{
+  margin-left: auto;
+  margin-right: auto;
   height: 420px;
   width: 300px;
   /* border: #111 1px solid; */
