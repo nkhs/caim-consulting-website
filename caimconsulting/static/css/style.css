@@ -1718,8 +1718,143 @@ h6 {
   }
 }
 
+#login {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding: 20px ;
+
+}
+
+#login h2{
+  text-align: center;
+}
+
+#login .form-login{
+  text-align: center;
+}
+
+#login form{
+  padding: 10px 12px;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  margin-right:auto ;
+  margin-left: auto;
+}
+
+#login input{
+  margin-bottom: 10px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #003166 ;
+}
+
+#login .btn-login{
+  border:2px solid #003166;
+  background-color: #004a99;
+  padding: 10px;
+  width: 100%;
+  color: white;
+}
+
+#login .btn-sign-up{
+  width: 100%;
+  text-align: center;
+}
 
 
+@media (max-width: 765px) {
+
+  #login{
+    margin-top: 20px;
+  }
+
+  #login .img-fluid{
+    display: none;
+  }
+}
+
+
+
+
+#sign-up{
+  -webkit-box-shadow: -1px 17px 68px -31px rgba(0,49,102,0.3);
+  -moz-box-shadow: -1px 17px 68px -31px rgba(0,49,102,0.3);
+  box-shadow: -1px 17px 68px -31px rgba(0,49,102,0.3);
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 20px ;
+}
+
+#sign-up input{
+  margin-bottom: 10px;
+  width: 100%;
+  outline: none !important;
+  border: none ;
+  border-radius: 0% !important;
+  border-bottom: 2px solid #003166 ;
+  box-shadow: none !important;
+}
+
+#sign-up h1{
+  text-align: center;
+  padding: 10px 0px;
+}
+
+#sign-up .form-sign{
+  text-align: center;
+  padding: 10px 30px;
+}
+
+#sign-up form{
+  padding: 10px 12px;
+  display: inline-block;
+  text-align: left;
+  margin-right:auto ;
+  margin-left: auto;
+}
+
+#sign-up .btn-sign{
+  border:2px solid #003166;
+  background-color: #004a99;
+  padding: 10px;
+  margin-top: 30px;
+  width: 100%;
+  color: white;
+}
+
+#sign-up img{
+  margin-top: 250px;
+}
+
+#sign-up a{
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+#sign-up .check-terms{
+  font-size: 12px;
+}
+
+@media (max-width: 765px) {
+
+  #sign-up{
+    width: 100%;
+  }
+  #sign-up .form-sign{
+    text-align: center;
+    padding: 10px 5px;
+  }
+  #sign-up .img-fluid{
+    display: none;
+  }
+ 
+ 
 #profile{
   height: fit-content;
 }
@@ -1747,11 +1882,8 @@ h6 {
   background-color: white;
   color: #003166;
   border-bottom:2px solid #003166;
-}
-
-
-
-#profile #graphic-profile{
+  
+  #profile #graphic-profile{
   display: block;
 }
 
