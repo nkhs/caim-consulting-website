@@ -1718,7 +1718,6 @@ h6 {
   }
 }
 
-
 #login {
   margin-right: auto;
   margin-left: auto;
@@ -1854,5 +1853,58 @@ h6 {
   #sign-up .img-fluid{
     display: none;
   }
+}
+ 
+#profile{
+  height: fit-content;
+}
 
+#profile .left-profile{
+  margin-top: 30px;
+  
+  background-image: url("../img/profile.svg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+#profile h1{
+  font-size: 50px;
+  padding: 20px;
+  color: white;
+}
+
+#profile .log-out{
+  float : right;
+}
+
+#profile .log-out .btn-log-out{
+  background-color: white;
+  color: #003166;
+  border-bottom:2px solid #003166;
+}
+
+#profile #graphic-profile{
+  display: block;
+}
+
+#profile #chatstart-box{
+  padding: 20px 20px 0px 20px;
+    width: 100%;
+}
+
+#profile .form {
+  padding: 20px;
+}
+
+#profile #toggle-chatbox-btn{
+  width: 60%;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #003166;
+  padding: 5px;
+  color: white;
 }
