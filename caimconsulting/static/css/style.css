@@ -1252,7 +1252,17 @@ h6 {
   overflow: hidden;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
+  #contact .img-contact{
+    display: none;
+  }
+  #contact .section-header{
+    padding-bottom: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
   #contact{
     padding: 60px 0px;
   }
@@ -1261,6 +1271,9 @@ h6 {
   }
   #contact .text-center{
     margin:10px;
+  }
+  #contact .text-center h3{
+    font-size: 25px;
   }
 }
 
