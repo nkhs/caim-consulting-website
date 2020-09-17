@@ -1882,8 +1882,9 @@ h6 {
   background-color: white;
   color: #003166;
   border-bottom:2px solid #003166;
-  
-  #profile #graphic-profile{
+}
+
+#profile #graphic-profile{
   display: block;
 }
 
