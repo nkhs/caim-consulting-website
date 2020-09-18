@@ -84,8 +84,20 @@
         <nav class="main-nav float-right d-none d-lg-block">
           <ul>
             <li><a href="{% url 'homepage' %}#about">About Us</a></li>
-            <li>
+            <!-- <li>
               <a href="{% url 'publicationhome' %}#intro">Publications</a>
+            </li> -->
+            <li class="drop-down">
+              <a href="#">Publications</a>
+              <ul>
+                {% for category in categories %}
+                <li>
+                  <a href="{% url 'catgpage' category.pk %}">
+                    {{ category.name }}
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
             </li>
             <li><a href="{% url 'homepage' %}#team">Team</a></li>
             <li><a href="{% url 'homepage' %}#board">Advisory</a></li>
