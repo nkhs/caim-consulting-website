@@ -1,67 +1,75 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Privacy Policy</title>
-  </head>
-  <body>
-    <div class="container">
-      <strong>Your privacy is paramount to us!</strong>
-      <ol>
-        <li>
-          It is Caim Consulting’s policy to respect our privacy regarding any
-          information we may collect from you across our website,
-          www.caimconsulting.in, and other sites we own and operate.
-        </li>
-        <li>
-          We only ask for personal information when we truly need it to provide
-          a service to you. We collect it by fair and lawful means, with your
-          knowledge and consent. We also let you know why we’re collecting it
-          and how it will be used.
-        </li>
-        <li>
-          We only retain collected information for as long as necessary to
-          provide you with your requested service. The data stored will be
-          protected within commercially acceptable means to prevent loss and
-          theft, as well as unauthorized access, disclosure, copying, use or
-          modification.
-        </li>
-        <li>
-          We don’t share any personally identifying information publicly or with
-          third-parties, except when required to by the operation of law.
-        </li>
-        <li>
-          Certain links on this website might take you to sites operated by
-          third parties. The managers of this blog have not reviewed all of the
-          information on these sites or the accuracy or reliability of any
-          information, data, opinions, advice, or statements on these sites. The
-          contributors do not endorse these sites, or opinions they may offer
-          and cannot accept responsibility or liability for their respective
-          privacy policies.
-        </li>
-        <li>
-          These third-party links are offered solely for the purpose of
-          discussion and thinking on business industry issues and other related
-          topics. It is also possible that some of the pages linked may become
-          inactive after the lapse of a period of time.
-        </li>
-        <li>
-          You are free to refuse our request for your personal information, with
-          the understanding that we may be unable to provide you with some of
-          your desired services.
-        </li>
-        <li>
-          Your continued use of our website will be regarded as acceptance of
-          our practices around privacy and personal information. If you have any
-          questions about how we handle user data and personal information, feel
-          free to contact us.
-        </li>
-        <li>
-          This policy is effective as of 20 July 2020. If you have any further
-          questions about this Policy, you can contact us on
-          contact@caimconsulting.in
-        </li>
-      </ol>
-    </div>
-  </body>
-</html>
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<main id="main">
+  <div class="container" id="privacy-policy">
+    <h3>Privacy Policy</h3>
+    <p>
+      Caim Consulting knows that you care how information about you is used and
+      shared and we appreciate your trust in us to do that carefully and
+      sensibly. This clauses herein describes the privacy policy of Caim
+      Consulting. By visiting our website, you are accepting and consenting to
+      the practices described in this Privacy Policy.
+    </p>
+    <ol>
+      <li>
+        It is Caim Consulting’s policy to respect our privacy regarding any
+        information we may collect from you across our website,
+        www.caimconsulting.in, and other sites we own and operate.
+      </li>
+      <li>
+        We only ask for personal information when we truly need it to provide a
+        service to you. We collect it by fair and lawful means, with your
+        knowledge and consent. We also let you know why we’re collecting it and
+        how it will be used.
+      </li>
+      <li>
+        We only retain collected information for as long as necessary to provide
+        you with your requested service. The data stored will be protected
+        within commercially acceptable means to prevent loss and theft, as well
+        as unauthorized access, disclosure, copying, use or modification.
+      </li>
+      <li>
+        We don’t share any personally identifying information publicly or with
+        third-parties, except when required to by the operation of law.
+      </li>
+      <li>
+        Certain links on this website might take you to sites operated by third
+        parties. The managers of this blog have not reviewed all of the
+        information on these sites or the accuracy or reliability of any
+        information, data, opinions, advice, or statements on these sites. The
+        contributors do not endorse these sites, or opinions they may offer and
+        cannot accept responsibility or liability for their respective privacy
+        policies.
+      </li>
+      <li>
+        These third-party links are offered solely for the purpose of discussion
+        and thinking on business industry issues and other related topics. It is
+        also possible that some of the pages linked may become inactive after
+        the lapse of a period of time.
+      </li>
+      <li>
+        You are free to refuse our request for your personal information, with
+        the understanding that we may be unable to provide you with some of your
+        desired services.
+      </li>
+      <li>
+        Your continued use of our website will be regarded as acceptance of our
+        practices around privacy and personal information. If you have any
+        questions about how we handle user data and personal information, feel
+        free to contact us.
+      </li>
+      <li>
+        This policy is effective as of 20 July 2020. If you have any further
+        questions about this Policy, you can contact us on
+        contact@caimconsulting.in
+      </li>
+    </ol>
+  </div>
+  <div class="container">
+    <a href="{% url 'disclaimer'%}">Read Disclaimer</a>
+  </div>
+</main>
+
+{% endblock %}
