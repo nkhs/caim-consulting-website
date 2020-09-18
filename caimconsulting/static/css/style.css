@@ -1951,3 +1951,11 @@ h6 {
 #logout-page a{
   color: white;
 }
+
+#disclaimer p {
+  text-align: justify;
+}
+
+#privacy-policy p,ol {
+  text-align: justify;
+}
