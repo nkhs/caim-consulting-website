@@ -7,11 +7,9 @@
     <h2 style="text-align: center;">You were logged out successfully!</h2>  
     <i class="fa fa-sign-out fa-5x" aria-hidden="true" style="text-align: center;"></i>
     <br>
-    <button class="btn btn-primary">
-      <a href="{% url 'login' %}">
-        Login
-      </a>
-    </button>
+    <form action="{% url 'login' %}">
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
   </div>
 </main>
 
