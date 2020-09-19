@@ -24,8 +24,8 @@ class SubscriberAdmin(admin.ModelAdmin):
 @admin.register(Advisor)
 class AdvisorAdmin(admin.ModelAdmin):
     list_display = (
-        "pk",
         "name",
+        "disp_priority",
         "position",
         "linkedin",
     )

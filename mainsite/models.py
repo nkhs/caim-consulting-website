@@ -48,6 +48,7 @@ class Message(models.Model):
 
 class Advisor(models.Model):
     name = models.CharField(max_length=50)
+    disp_priority = models.IntegerField(unique=True, null=True, blank=True)
     slug = models.SlugField(max_length=50, unique=True, editable=False)
     picture = models.ImageField(upload_to="advisors/")
     position = models.CharField(max_length=50)
@@ -62,7 +63,7 @@ class Advisor(models.Model):
         return self.name
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["disp_priority"]
 
 
 class Subscriber(models.Model):
