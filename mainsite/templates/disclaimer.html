@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<main id="main">
+  <div class="container" id="disclaimer">
+    <h3>User Acknowledgement</h3>
+    <p>
+      By proceeding for registration, I acknowledge that I of my own accord wish
+      to know more about the services extended by Caim Consulting for my own
+      information and use. I further acknowledge that I am fully aware of Caim
+      Consulting being a student run organisation and all assistance sought
+      through any mode of communication shall be solely and exclusively at my
+      own risk and perils. I further acknowledge having read and understood the
+      Disclaimer and the Privacy Policy provided hereinbelow.
+    </p>
+    <h3>Disclaimer</h3>
+    <p>
+      This web-site https://caimconsulting.in/ (“Website”) is a public resource
+      for general information about Caim Consulting. The material on our Web
+      site is provided by Caim Consulting and has been prepared and published
+      for general information only which may or may not reflect the current
+      legal developments. This information is not intended to constitute, and
+      should not be considered, legal reference or legal advice.
+    </p>
+    <p>
+      Caim Consulting does not sponsor reliance upon, or accept responsibility
+      for the information provided or for the way in which this information
+      should be used or any actions taken in consequence of the use of such
+      information. Communication of information by or through this web site,
+      your receipt or use of such information is not intended to create an
+      attorney-client relationship with Caim Consulting or any of the
+      Co-founders, Members or Advisory Board. You should not act or rely upon
+      information contained in the website without specifically seeking
+      professional legal advice.
+    </p>
+    <p>
+      Caim Consulting has endeavoured to comply with all applicable legal and
+      ethical requirements in compiling this site. If you wish to discuss
+      potential legal matters with us, please use the “contact us” link.
+      Although, you should not rely upon transmission of an e-mail through this
+      web site to create an attorney-client relationship. We cannot assure that
+      your communications via the web site will be privileged or that we will
+      treat it as privileged, unless we reach an explicit agreement otherwise.
+      Therefore, please do not send confidential or sensitive information to us
+      by e-mail through this web site.
+    </p>
+    <p>
+      Caim Consulting does not assume any liability or responsibility for any
+      errors or omissions in the content of this site, or any termination or
+      suspension of this site, and further disclaims any liability of any nature
+      for any loss howsoever caused in connection with using this website. No
+      other use than your reference only of the materials published on this
+      website is permitted without the express prior written consent of Caim
+      Consulting.
+    </p>
+  </div>
+  <div class="container">
+    <a href="{% url 'privacy'%}">Read Privacy Policy</a>
+  </div>
+</main>
+
+{% endblock %}

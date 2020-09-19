@@ -26,8 +26,26 @@
               </div>
             </div>
             {% endfor %}
-            <label class="check-terms"><input type="checkbox" value="" style="width: fit-content;" required> I Agree to the <a>Terms &amp; Conditions</a>.</label>
-            <button class="btn btn-success btn-sign" type="submit">Create an Account</button>
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="terms-conditions-check"
+                required
+              />
+              <label
+                class="check-terms custom-control-label"
+                for="terms-conditions-check"
+              >
+                I agree to the
+                <a href="{% url 'disclaimer' %}" target="_blank">Disclaimer</a>
+                and
+                <a href="{% url 'privacy' %}" target="_blank">Privacy Policy</a>
+              </label>
+            </div>
+            <button class="btn btn-success btn-sign" type="submit">
+              Create an Account
+            </button>
           </form>
         </div>
       </div>
