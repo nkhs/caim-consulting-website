@@ -18,6 +18,10 @@ def disclaimer(request):
     return render(request, "disclaimer.html")
 
 
+def services(request):
+    return render(request, "services.html")
+
+
 def advisory_board(request, member):
     advisor = get_object_or_404(Advisor, slug=member)
     return render(request, "advisor_bio.html", {"advisor": advisor})

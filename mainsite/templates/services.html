@@ -1,0 +1,89 @@
+{% extends "base.html" %} {% block page_content %}
+<!-- prettier-ignore -->
+{% load static %}
+
+<main id="main">
+  <div class="container" id="services-list">
+    <h3>Offered Services</h3>
+    <ol>
+      <li>
+        Business Incorporation
+        <ol>
+          <li>Private Limited Company</li>
+          <li>Limited Liability Company</li>
+          <li>One Person Company</li>
+          <li>Sole Proprietorship</li>
+          <li>Partnership</li>
+        </ol>
+      </li>
+      <li>
+        Intellectual Property Protection
+        <ol>
+          <li>Trademark Registration</li>
+          <li>Trademark Renewal</li>
+          <li>Trademark Rectification</li>
+          <li>Copyright Registration</li>
+          <li>Patent Registration</li>
+          <li>Design Registration</li>
+        </ol>
+      </li>
+      <li>
+        Quality Certification & Licensing
+        <ol>
+          <li>
+            International Organization for Standardization – ISO Registration
+          </li>
+          <li>
+            Food Safety & Standards Authority of India – FSSAI Registration
+          </li>
+          <li>International Standard Book Number (ISBN) Registration</li>
+        </ol>
+      </li>
+      <li>
+        Registrations & Filings
+        <ol>
+          <li>DPIIT Startups Registration</li>
+          <li>Goods and Service Tax (GST) Registration</li>
+          <li>Income Tax (IT) Registration</li>
+          <li>GST Return Filings (Nill)</li>
+          <li>Income Tax Return Filings (Individual)</li>
+          <li>Right to Information (RTI) Filings</li>
+        </ol>
+      </li>
+      <li>
+        Business Documentations
+        <ol>
+          <li>Legal Notice</li>
+          <li>Policies</li>
+          <li>Deeds</li>
+          <li>Agreements</li>
+          <li>Articles and Memorandums</li>
+        </ol>
+      </li>
+      <li>
+        Legal Info & Research
+        <ol>
+          <li>Information on domestic or international laws</li>
+          <li>Application procedures of Startup related schemes</li>
+          <li>Any other legal query</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+  <div class="container">
+    <strong>
+      Even if you need any other help, feel free to talk to us! Our team would
+      assist you in every possible manner.
+    </strong>
+  </div>
+  <br />
+  <div class="row justify-content-center">
+    <form action="{% url 'profile' %}">
+      <button type="submit" class="btn btn-primary">
+        Talk to Us
+      </button>
+    </form>
+  </div>
+</main>
+
+{% endblock %}
