@@ -3,7 +3,6 @@ from django.urls import path
 from blog import views
 
 urlpatterns = [
-    path("publications/", views.publication_index, name="publicationhome"),
     path(
         "publication/<int:publication_id>/",
         views.publication_page,
