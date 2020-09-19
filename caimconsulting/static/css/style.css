@@ -978,7 +978,8 @@ h6 {
 }
 
 #team .team-item p {
-  font-style: italic;
+  /* font-style: italic; */
+  text-align: justify;
   margin: 0 0 15px 140px;
 }
 
@@ -1558,7 +1559,7 @@ h6 {
   }
 
   #team .team-item p {
-    width: 80%;
+    width: 75%;
   }
 
   #contact {
