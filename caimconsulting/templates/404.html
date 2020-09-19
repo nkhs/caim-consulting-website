@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Caim Consulting</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Loading Django static -->
+    {% load static %}
+
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon1.png' %}" rel="icon" />
+    <link href="{% static 'img/favicon1.png' %}" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS File -->
+    <link
+      href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries CSS Files -->
+    <link
+      href="{% static 'assets/font-awesome/css/font-awesome.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/animate/animate.min.css' %}"
+      rel="stylesheet' %}"
+    />
+    <link
+      href="{% static 'assets/ionicons/css/ionicons.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/owlcarousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/lightbox/css/lightbox.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/chatboxes.css' %}" rel="stylesheet" />
+
+    <!-- =======================================================
+    Theme Name: NewBiz
+    Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+  </head>
+
+  <body>
+    <header id="header" class="fixed-top">
+        <div class="container">
+          <div class="logo float-left">
+            <div class="container">
+              <a href="{% url 'homepage' %}#intro" class="scrollto">
+                <img
+                  width="250px"
+                  style="padding-top: 10px;"
+                  src="{% static 'img/caim.png' %}"
+                  alt=""
+                  class="img-fluid"
+                />
+                <!-- <img src="{% static 'img/logo.png' %}" alt="" class="img-fluid" /> -->
+              </a>
+            </div>
+          </div>
+  
+          <nav class="main-nav float-right d-none d-lg-block">
+            <ul>
+              <li><a href="{% url 'homepage' %}#about">About Us</a></li>
+              <li class="drop-down">
+                <a href="#">Publications</a>
+                <ul>
+                  {% for category in categories %}
+                  <li>
+                    <a href="{% url 'catgpage' category.pk %}">
+                      {{ category.name }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              <li><a href="{% url 'homepage' %}#team">Team</a></li>
+              <li><a href="{% url 'homepage' %}#board">Advisory</a></li>
+              <li><a href="{% url 'homepage' %}#contact">Contact Us</a></li>
+              <li><a href="{% url 'profile' %}">Profile</a></li>
+            </ul>
+          </nav>
+          <!-- .main-nav -->
+        </div>
+    </header>
+    
+    <div>
+        <img 
+        src = "../static/img/404.svg"
+        
+        class="img-fluid"
+        style="height: 400px; width: 100%; padding: 20px;"/>
+        <br>
+        <h2 style="text-align: center;"><a href="">Go back</a></h2>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 footer-info">
+                <h3>Caim Consulting</h3>
+                <p>
+                  Caim Consulting is a non-profit initiative pioneered with an
+                  aim to deliver cost free legal assistance to start-ups,
+                  innovations and businesses, especially those in their incubatory
+                  phases.
+                </p>
+              </div>
+  
+              <div class="col-lg-2 col-md-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><a href="{% url 'homepage' %}#intro">Home</a></li>
+                  <li><a href="{% url 'homepage' %}#about">About us</a></li>
+                  <li><a href="{% url 'homepage' %}#services">Services</a></li>
+                  <!-- <li><a href="#">Terms of service</a></li> -->
+                  <li>
+                    <a href="{% url 'privacy' %}" target="_blank">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'disclaimer' %}" target="_blank">
+                      Disclaimer
+                    </a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="col-lg-3 col-md-6 footer-contact">
+                <h4>Contact Us</h4>
+                <p>
+                  <strong>Phone:</strong>+91-8789619680 <br />&nbsp; &nbsp; &nbsp;
+                  &nbsp; &nbsp; &nbsp; &nbsp; +91-8920705589<br />
+                  <strong>Email:</strong>
+                  <a
+                    class="footer-a"
+                    target="_blank"
+                    href="mailto:contact@caimconsulting.in"
+                  >
+                    contact@caimconsulting.in
+                  </a>
+                  <br />
+                </p>
+  
+                <div class="social-links">
+                  <a href="https://twitter.com/CaimConsulting" class="twitter">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/caimconsulting"
+                    class="facebook"
+                  >
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/caimconsulting/"
+                    class="linkedin"
+                  >
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+  
+              <div class="col-lg-3 col-md-6 footer-newsletter">
+                <h4>Our Publications</h4>
+                <p>
+                  Subscribe for regular updates to our publications
+                </p>
+                <form action="/subscribe/" method="post">
+                  {% csrf_token %}
+                  <input
+                    type="email"
+                    placeholder="Enter your e-mail"
+                    name="email"
+                  />
+                  <button
+                    type="submit"
+                    class="btn btn-sm btn-primary"
+                    onclick="alert('Subscribed')"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="copyright">
+            &copy; <strong>Caim Consulting</strong>
+            <br />
+            All Rights Reserved
+          </div>
+          <br />
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+             -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            <br />
+            Developed by
+            <a href="https://chandrikadeb7.github.io/">Chandrika</a>,
+            <a href="https://github.com/chttrjeankr">Ankur</a>
+            &amp;
+            <a href="https://github.com/aditianshu">Aditi</a>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>
