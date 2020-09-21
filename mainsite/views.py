@@ -7,9 +7,7 @@ from mainsite.models import Advisor, Chat, Message, Service, Subscriber
 
 
 def index(request):
-    services = Service.objects.all()
-    advisors = Advisor.objects.all()
-    return render(request, "index.html", {"services": services, "advisors": advisors})
+    return render(request, "index.html")
 
 
 def privacy_policy(request):
@@ -18,6 +16,10 @@ def privacy_policy(request):
 
 def disclaimer(request):
     return render(request, "disclaimer.html")
+
+
+def services(request):
+    return render(request, "services.html")
 
 
 def advisory_board(request, member):

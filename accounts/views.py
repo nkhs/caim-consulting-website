@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
 from accounts.forms import SignUpForm
-from mainsite.models import Chat, Service
+from mainsite.models import Chat
 
 
 @login_required
@@ -12,7 +12,6 @@ def profile(request):
         chats = Chat.objects.all()
     else:
         chats = Chat.objects.filter(user=request.user)
-    services = Service.objects.all()
     resolved_chats = chats.filter(resolved=True)
     unresolved_chats = chats.filter(resolved=False)
     return render(
@@ -21,7 +20,6 @@ def profile(request):
         {
             "unresolved_chats": unresolved_chats,
             "resolved_chats": resolved_chats,
-            "services": services,
         },
     )
 

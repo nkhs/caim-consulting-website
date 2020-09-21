@@ -14,6 +14,7 @@ body {
   background: #fff;
   color: #444;
   font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 main {
@@ -1961,6 +1962,104 @@ h6 {
   text-align: justify;
 }
 
+
+/*------------ Services Page -------- */
+
+#services-list .service-grid {
+  background: #fcfcfc;
+}
+#services-list   .service-title h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  position: relative;
+  margin-bottom: 45px;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+}
+#services-list .service-title h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background:#00366f;
+  bottom: -25px;
+  margin: auto;
+  right: 0;
+}
+#services-list .service-icon {
+  position: relative;
+}
+#services-list .service-title p {
+  padding: 0 190px;
+  margin-bottom: 10px;
+}
+
+#services-list .service-icon i {
+  font-size: 40px;
+  color:white;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+#services-list  hr{
+  color: white;
+}
+#services-list .service-wrap {
+  height: 100%;
+  background-color: #003b7a;
+  -webkit-box-shadow: 13px 11px 5px -6px rgba(0,103,213,0.47);
+  -moz-box-shadow: 13px 11px 5px -6px rgba(0,103,213,0.47);
+  box-shadow: 13px 11px 5px -6px rgba(0,103,213,0.47);
+  border: 1px solid #e6e6e6;
+  padding: 50px 30px;
+  position: relative;
+}
+
+#services-list .service-wrap p{
+    text-align: left;
+    position: relative;
+    margin: 0 0 0 0;
+    color: rgba(255, 255, 255, 0.822);
+}
+
+#services-list .service-wrap:hover:before {
+  background: rgba(0, 0, 0, 0.2901960784313726);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  content: "";
+  top: 0;
+  opacity: 1;
+}
+
+#services-list .service-wrap:hover h4,.service-wrap:hover p{
+  color: #fff;
+}
+#services-list .service-wrap h4 {
+  
+  color: rgba(255, 255, 255, 0.76);
+  margin-bottom: 17px;
+  
+  position: relative;
+}
+
+#services-list .service-footer{
+  padding: 20px;
+}
+#services-list .service-footer p{
+  font-weight: bold;
+}
+
+#services-list .service-footer button{
+  background-color: #00366f;
+  padding: 10px;
+  width: 40%;
+
+
+}
+
 #error-pages img {
   display: block;
   margin: auto;
@@ -1978,4 +2077,3 @@ h6 {
   text-decoration: none;
   border-bottom: 2px solid #00428a;
   padding: 10px 20px;
-}
