@@ -1962,6 +1962,7 @@ h6 {
   text-align: justify;
 }
 
+
 /*------------ Services Page -------- */
 
 #services-list .service-grid {
@@ -2056,4 +2057,24 @@ h6 {
   padding: 10px;
   width: 40%;
 
+
+}
+
+#error-pages img {
+  display: block;
+  margin: auto;
+  height: 400px; 
+  width: 70%; 
+  padding: 20px;
+}
+
+#error-pages h2 {
+  text-align: center;
+}
+
+#error-pages a{
+  color: #003166;
+  text-decoration: none;
+  border-bottom: 2px solid #00428a;
+  padding: 10px 20px;
 }
