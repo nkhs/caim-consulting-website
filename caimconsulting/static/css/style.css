@@ -948,7 +948,7 @@ h6 {
 --------------------------------*/
 
 #team {
-  padding: 60px 0;
+  padding: 60px 0 0 0;
   box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -1001,6 +1001,16 @@ h6 {
 
 #team .owl-dot.active {
   background-color: #007bff;
+}
+
+#team .devs{
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+#team .devs a{
+  text-decoration: none;
+  color: #010407;
 }
 
 /* Board Section
@@ -2077,4 +2087,72 @@ h6 {
   text-decoration: none;
   border-bottom: 2px solid #00428a;
   padding: 10px 20px;
+}
+
+
+
+#devs .team h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+  padding: 20px;
+  
+}
+
+#devs .team h2 span {
+  color: #00428a;
+}
+
+
+
+#devs .team .box {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all .5s ease-in-out;
+  border-top: 0.2px solid black;
+  border-bottom: 4px solid black;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 420px;
+  width: 300px;
+}
+
+#devs .team .box .image {
+  padding-top: 20px;
+  position: relative;
+}
+
+#devs img{
+  height: 250px;
+  width: 250px;
+}
+
+#devs .team .box h3 {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#devs .team .box h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #999999;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+#devs .team .box .links{
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+#devs .team .box a{
+  color: black;
+  padding: 2px;
+}
+
+#devs .team .box:hover {
+  transform: translateY(-15px);
 }

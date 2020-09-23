@@ -27,6 +27,10 @@ def advisory_board(request, member):
     return render(request, "advisor_bio.html", {"advisor": advisor})
 
 
+def developers(request):
+    return render(request, "developers.html")
+
+
 def contactform(request):
     if request.method == "POST":
         form = QueryForm(request.POST)
