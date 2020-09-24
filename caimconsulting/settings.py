@@ -37,6 +37,10 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # DEBUG = True
 DEBUG = os.environ.get("DEBUG", "") != "False"
 
+# https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/#https
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 ALLOWED_HOSTS = ["caim-consulting.herokuapp.com"]
 
 
