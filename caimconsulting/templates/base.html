@@ -62,10 +62,7 @@
       href="{% static 'assets/lightbox/css/lightbox.min.css' %}"
       rel="stylesheet"
     />
-    <link
-      href="{% static 'assets/aos/aos.css' %}"
-      rel="stylesheet"
-    />
+    <link href="{% static 'assets/aos/aos.css' %}" rel="stylesheet" />
 
     <!-- Main Stylesheet File -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
@@ -90,7 +87,7 @@
             <a href="{% url 'homepage' %}#intro" class="scrollto">
               <img
                 width="250px"
-                style="padding-top: 10px;"
+                style="padding-top: 10px"
                 src="{% static 'img/caim.png' %}"
                 alt=""
                 class="img-fluid"
@@ -144,10 +141,9 @@
             <div class="col-lg-4 col-md-6 footer-info">
               <h3>Caim Consulting</h3>
               <p>
-                Caim Consulting is a non-profit initiative pioneered with an
-                aim to deliver cost free legal assistance to start-ups,
-                innovations and businesses, especially those in their incubatory
-                phases.
+                Caim Consulting is a non-profit initiative pioneered with an aim
+                to deliver cost free legal assistance to start-ups, innovations
+                and businesses, especially those in their incubatory phases.
               </p>
             </div>
 
@@ -208,9 +204,7 @@
 
             <div class="col-lg-3 col-md-6 footer-newsletter">
               <h4>Our Publications</h4>
-              <p>
-                Subscribe for regular updates to our publications
-              </p>
+              <p>Subscribe for regular updates to our publications</p>
               <form action="/subscribe/" method="post">
                 {% csrf_token %}
                 <input
@@ -274,7 +268,7 @@
     <script src="{% static 'assets/lightbox/js/lightbox.min.js' %}"></script>
     <script src="{% static 'assets/aos/aos.js' %}"></script>
     <script>
-      AOS.init({once: true});
+      AOS.init({ once: true });
     </script>
     <!-- Contact Form JavaScript File -->
     <script src="{% static 'js/contactform.js' %}"></script>

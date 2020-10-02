@@ -1,65 +1,95 @@
 {% extends "base.html" %} {% block page_content %}
 <!-- prettier-ignore -->
 {% load static %}
-    
 
-    <div id = "devs">
-        <section class="team" id="team">
-            <div class="container text-center" >
-                <h2><span>Our Developers</span></h2>
-                <br>
-                
-                <div class="row justify-content-center" >
-                    <div class="col-lg-3 col-sm-6 mx-3" >
-                        <div class="box">
-                            <div class="image">
-                                <img src="{% static 'img/devs/ankur.jpeg' %}" alt="team" class="img-fluid">
-                            </div>
-                            <h3>Ankur Chattopadhyay</h3>
-                            <h4>Python/Django Developer</h4>
-                            <br>
-                            <div class="links">
-                                <a href="https://www.linkedin.com/in/ankurchattopadhyay/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                <a href="https://github.com/chttrjeankr" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                            </div>
+<div id="devs">
+  <section class="team" id="team">
+    <div class="container text-center">
+      <h2><span>Our Developers</span></h2>
+      <br />
 
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mx-3">
-                        <div class="box">
-                            <div class="image">
-                                <img src="{% static 'img/devs/chandrika.jpg' %}" alt="team" class="img-fluid">
-                            </div>
-                            <h3>Chandrika Deb</h3>
-                            <h4>Software Developer, Amdocs <br>
-                            Former XLRI Intern</h4>
-                            <br>
-                            <div class="links">
-                                <a href="https://www.linkedin.com/in/chandrika-deb/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                <a href="https://github.com/chandrikadeb7" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 mx-3">
-                        <div class="box">
-                            <div class="image">
-                                <img src="{% static 'img/devs/aditi.JPG' %}" alt="team" class="img-fluid">
-                            </div>
-                            <h3>Aditi Anshu</h3>
-                            <h4>Web Developer</h4>
-                            <br>
-                            <div class="links">
-                                <a href="https://www.linkedin.com/in/aditi-anshu-2202a3194/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                <a href="https://github.com/aditianshu" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-sm-6 mx-3">
+          <div class="box">
+            <div class="image">
+              <img
+                src="{% static 'img/devs/ankur.jpeg' %}"
+                alt="team"
+                class="img-fluid"
+              />
             </div>
-        </section>
-
+            <h3>Ankur Chattopadhyay</h3>
+            <h4>Python/Django Developer</h4>
+            <br />
+            <div class="links">
+              <a
+                href="https://www.linkedin.com/in/ankurchattopadhyay/"
+                target="_blank"
+              >
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/chttrjeankr" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 mx-3">
+          <div class="box">
+            <div class="image">
+              <img
+                src="{% static 'img/devs/chandrika.jpg' %}"
+                alt="team"
+                class="img-fluid"
+              />
+            </div>
+            <h3>Chandrika Deb</h3>
+            <h4>
+              Software Developer, Amdocs <br />
+              Former XLRI Intern
+            </h4>
+            <br />
+            <div class="links">
+              <a
+                href="https://www.linkedin.com/in/chandrika-deb/"
+                target="_blank"
+              >
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/chandrikadeb7" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 mx-3">
+          <div class="box">
+            <div class="image">
+              <img
+                src="{% static 'img/devs/aditi.JPG' %}"
+                alt="team"
+                class="img-fluid"
+              />
+            </div>
+            <h3>Aditi Anshu</h3>
+            <h4>Web Developer</h4>
+            <br />
+            <div class="links">
+              <a
+                href="https://www.linkedin.com/in/aditi-anshu-2202a3194/"
+                target="_blank"
+              >
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/aditianshu" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+</div>
 
-    {% endblock %}
-
-    
+{% endblock %}
