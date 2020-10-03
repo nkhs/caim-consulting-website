@@ -1,9 +1,8 @@
 from django.db import IntegrityError
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
-
 from mainsite.forms import QueryForm
-from mainsite.models import Advisor, Chat, Message, Service, Subscriber
+from mainsite.models import Advisor, Chat, Message, Subscriber
 
 
 def index(request):

@@ -2,13 +2,10 @@
 <!-- prettier-ignore -->
 {% load static %}
 
-  <div id="error-pages">
-    <img 
-    src = "{% static 'img/404.svg' %}"   
-    class="img-fluid"
-    />
-    <br>
-    <h2 style="text-align: center;"><a href="{% url 'homepage' %}">Go back</a></h2>
-  </div>
+<div id="error-pages">
+  <img src="{% static 'img/404.svg' %}" class="img-fluid" />
+  <br />
+  <h2 style="text-align: center"><a href="{% url 'homepage' %}">Go back</a></h2>
+</div>
 
 {% endblock %}

@@ -1003,12 +1003,12 @@ h6 {
   background-color: #007bff;
 }
 
-#team .devs{
+#team .devs {
   text-align: center;
   margin-top: 10px;
   padding-bottom: 30px;
 }
-#team .devs a{
+#team .devs a {
   text-decoration: none;
   color: #010407;
 }
@@ -1023,10 +1023,10 @@ h6 {
   text-align: center;
 }
 
-.blue-text{
+.blue-text {
   font-size: small;
 }
-.container-advisors{
+.container-advisors {
   margin-left: auto;
   margin-right: auto;
   height: 420px;
@@ -1034,20 +1034,20 @@ h6 {
   /* border: #111 1px solid; */
   margin-bottom: 20px;
 }
-.advisors-profile{
+.advisors-profile {
   height: 80px;
   width: 50px;
 }
-.avatar{
-  padding:20px 20px 10px 20px;
+.avatar {
+  padding: 20px 20px 10px 20px;
 }
-.rounded-circle{
+.rounded-circle {
   height: 150px;
   width: 150px;
   margin: auto;
 }
 
-.avatar-image{
+.avatar-image {
   position: relative;
   margin-top: 50px;
   height: 260px;
@@ -1077,8 +1077,6 @@ h6 {
   left: 0;
 }
 
-
-
 .avatar-image:hover .title {
   top: 90px;
 }
@@ -1088,11 +1086,11 @@ h6 {
   display: block;
   width: 250px;
   height: 200px;
-  left:0;
+  left: 0;
   top: 70px;
   text-align: center;
   opacity: 0;
-  transition: opacity .35s ease;
+  transition: opacity 0.35s ease;
   /* position: absolute;
   width: 50px;
   top: 90px;
@@ -1101,7 +1099,6 @@ h6 {
   opacity: 0;
   transition: opacity .35s ease; */
 }
-
 
 .button-avatar a {
   width: 200px;
@@ -1126,8 +1123,6 @@ h6 {
 .avatar-image:hover .button-avatar {
   opacity: 1;
 }
-
-
 
 /*
 #board .member {
@@ -1265,31 +1260,30 @@ h6 {
 }
 
 @media only screen and (max-width: 480px) {
-  #contact .img-contact{
+  #contact .img-contact {
     display: none;
   }
-  #contact .section-header{
+  #contact .section-header {
     padding-bottom: 10px;
   }
-
 }
 
 @media only screen and (max-width: 768px) {
-  #contact{
+  #contact {
     padding: 60px 0px;
   }
-  #contact #login-page{
+  #contact #login-page {
     margin-top: 20px;
   }
-  #contact .text-center{
-    margin:10px;
+  #contact .text-center {
+    margin: 10px;
   }
-  #contact .text-center h3{
+  #contact .text-center h3 {
     font-size: 25px;
   }
 }
 
-#contact #login-page{
+#contact #login-page {
   margin-top: 20px;
 }
 
@@ -1748,104 +1742,98 @@ h6 {
   margin-left: auto;
   margin-top: 60px;
   margin-bottom: 50px;
-  padding: 20px ;
-
+  padding: 20px;
 }
 
-#login h2{
+#login h2 {
   text-align: center;
 }
 
-#login .form-login{
+#login .form-login {
   text-align: center;
 }
 
-#login form{
+#login form {
   padding: 10px 12px;
   width: 100%;
   display: inline-block;
   text-align: left;
-  margin-right:auto ;
+  margin-right: auto;
   margin-left: auto;
 }
 
-#login input{
+#login input {
   margin-bottom: 10px;
   width: 100%;
   outline: none;
   border: none;
-  border-bottom: 2px solid #003166 ;
+  border-bottom: 2px solid #003166;
 }
 
-#login .btn-login{
-  border:2px solid #003166;
+#login .btn-login {
+  border: 2px solid #003166;
   background-color: #004a99;
   padding: 10px;
   width: 100%;
   color: white;
 }
 
-#login .btn-sign-up{
+#login .btn-sign-up {
   width: 100%;
   text-align: center;
 }
 
-
 @media (max-width: 765px) {
-
-  #login{
+  #login {
     margin-top: 20px;
   }
 
-  #login .img-fluid{
+  #login .img-fluid {
     display: none;
   }
 }
 
-
-
-
-#sign-up{
-  -webkit-box-shadow: -1px 17px 68px -31px rgba(0,49,102,0.3);
-  -moz-box-shadow: -1px 17px 68px -31px rgba(0,49,102,0.3);
-  box-shadow: -1px 17px 68px -31px rgba(0,49,102,0.3);
+#sign-up {
+  -webkit-box-shadow: -1px 17px 68px -31px rgba(0, 49, 102, 0.3);
+  -moz-box-shadow: -1px 17px 68px -31px rgba(0, 49, 102, 0.3);
+  box-shadow: -1px 17px 68px -31px rgba(0, 49, 102, 0.3);
   margin-right: auto;
   margin-left: auto;
   margin-top: 30px;
   margin-bottom: 50px;
-  padding: 20px ;
+  padding: 20px;
 }
 
-#sign-up input{
+#sign-up input {
   margin-bottom: 10px;
   width: 100%;
   outline: none !important;
-  border: none ;
+  border: none;
   border-radius: 0% !important;
-  border-bottom: 2px solid #003166 ;
+  border-bottom: 2px solid #003166;
   box-shadow: none !important;
 }
 
-#sign-up h1{
+#sign-up h1 {
   text-align: center;
   padding: 10px 0px;
 }
 
-#sign-up .form-sign{
+#sign-up .form-sign {
   text-align: center;
   padding: 10px 30px;
 }
 
-#sign-up form{
+#sign-up form {
   padding: 10px 12px;
   display: inline-block;
   text-align: left;
-  margin-right:auto ;
+  margin-right: auto;
   margin-left: auto;
 }
 
-#sign-up .btn-sign{
-  border:2px solid #003166;
+#sign-up .btn-sign {
+  border: 2px solid #003166;
   background-color: #004a99;
   padding: 10px;
   margin-top: 30px;
@@ -1853,76 +1841,75 @@ h6 {
   color: white;
 }
 
-#sign-up img{
+#sign-up img {
   margin-top: 250px;
 }
 
-#sign-up a{
+#sign-up a {
   font-size: 12px;
   text-decoration: underline;
 }
 
-#sign-up .check-terms{
+#sign-up .check-terms {
   font-size: 12px;
 }
 
 @media (max-width: 765px) {
-
-  #sign-up{
+  #sign-up {
     width: 100%;
   }
-  #sign-up .form-sign{
+  #sign-up .form-sign {
     text-align: center;
     padding: 10px 5px;
   }
-  #sign-up .img-fluid{
+  #sign-up .img-fluid {
     display: none;
   }
 }
- 
-#profile{
+
+#profile {
   height: fit-content;
 }
 
-#profile .left-profile{
+#profile .left-profile {
   margin-top: 30px;
-  
+
   background-image: url("../img/profile.svg");
   background-attachment: fixed;
   background-size: cover;
   height: 100%;
 }
 
-#profile h1{
+#profile h1 {
   font-size: 50px;
   padding: 20px;
   color: white;
 }
 
-#profile .log-out{
-  float : right;
+#profile .log-out {
+  float: right;
 }
 
-#profile .log-out .btn-log-out{
+#profile .log-out .btn-log-out {
   background-color: white;
   color: #003166;
-  border-bottom:2px solid #003166;
+  border-bottom: 2px solid #003166;
 }
 
-#profile #graphic-profile{
+#profile #graphic-profile {
   display: block;
 }
 
-#profile #chatstart-box{
+#profile #chatstart-box {
   padding: 20px 20px 0px 20px;
-    width: 100%;
+  width: 100%;
 }
 
 #profile .form {
   padding: 20px;
 }
 
-#profile #toggle-chatbox-btn{
+#profile #toggle-chatbox-btn {
   width: 60%;
   display: block;
   margin-top: 30px;
@@ -1934,23 +1921,22 @@ h6 {
   color: white;
 }
 
-
-#logout-page{
+#logout-page {
   height: max-content;
-  margin-bottom: 50px ;
+  margin-bottom: 50px;
 }
 
-#logout-page h2{
+#logout-page h2 {
   padding: 20px 0px 10px 0px;
 }
 
-#logout-page i{
+#logout-page i {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
 
-#logout-page button{
+#logout-page button {
   padding: 10px 5px;
   border: none;
   background-color: #00366f;
@@ -1960,7 +1946,7 @@ h6 {
   width: 30%;
 }
 
-#logout-page a{
+#logout-page a {
   color: white;
 }
 
@@ -1968,17 +1954,17 @@ h6 {
   text-align: justify;
 }
 
-#privacy-policy p,ol {
+#privacy-policy p,
+ol {
   text-align: justify;
 }
-
 
 /*------------ Services Page -------- */
 
 #services-list .service-grid {
   background: #fcfcfc;
 }
-#services-list   .service-title h2 {
+#services-list .service-title h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   position: relative;
@@ -1993,7 +1979,7 @@ h6 {
   left: 0;
   width: 60px;
   height: 2px;
-  background:#00366f;
+  background: #00366f;
   bottom: -25px;
   margin: auto;
   right: 0;
@@ -2008,29 +1994,29 @@ h6 {
 
 #services-list .service-icon i {
   font-size: 40px;
-  color:white;
+  color: white;
   margin-bottom: 20px;
   display: inline-block;
 }
-#services-list  hr{
+#services-list hr {
   color: white;
 }
 #services-list .service-wrap {
   height: 100%;
   background-color: #003b7a;
-  -webkit-box-shadow: 13px 11px 5px -6px rgba(0,103,213,0.47);
-  -moz-box-shadow: 13px 11px 5px -6px rgba(0,103,213,0.47);
-  box-shadow: 13px 11px 5px -6px rgba(0,103,213,0.47);
+  -webkit-box-shadow: 13px 11px 5px -6px rgba(0, 103, 213, 0.47);
+  -moz-box-shadow: 13px 11px 5px -6px rgba(0, 103, 213, 0.47);
+  box-shadow: 13px 11px 5px -6px rgba(0, 103, 213, 0.47);
   border: 1px solid #e6e6e6;
   padding: 50px 30px;
   position: relative;
 }
 
-#services-list .service-wrap p{
-    text-align: left;
-    position: relative;
-    margin: 0 0 0 0;
-    color: rgba(255, 255, 255, 0.822);
+#services-list .service-wrap p {
+  text-align: left;
+  position: relative;
+  margin: 0 0 0 0;
+  color: rgba(255, 255, 255, 0.822);
 }
 
 #services-list .service-wrap:hover:before {
@@ -2044,37 +2030,35 @@ h6 {
   opacity: 1;
 }
 
-#services-list .service-wrap:hover h4,.service-wrap:hover p{
+#services-list .service-wrap:hover h4,
+.service-wrap:hover p {
   color: #fff;
 }
 #services-list .service-wrap h4 {
-  
   color: rgba(255, 255, 255, 0.76);
   margin-bottom: 17px;
-  
+
   position: relative;
 }
 
-#services-list .service-footer{
+#services-list .service-footer {
   padding: 20px;
 }
-#services-list .service-footer p{
+#services-list .service-footer p {
   font-weight: bold;
 }
 
-#services-list .service-footer button{
+#services-list .service-footer button {
   background-color: #00366f;
   padding: 10px;
   width: 40%;
-
-
 }
 
 #error-pages img {
   display: block;
   margin: auto;
-  height: 400px; 
-  width: 70%; 
+  height: 400px;
+  width: 70%;
   padding: 20px;
 }
 
@@ -2082,32 +2066,27 @@ h6 {
   text-align: center;
 }
 
-#error-pages a{
+#error-pages a {
   color: #003166;
   text-decoration: none;
   border-bottom: 2px solid #00428a;
   padding: 10px 20px;
 }
 
-
-
 #devs .team h2 {
   font-size: 30px;
   font-weight: 700;
   margin: 0;
   padding: 20px;
-  
 }
 
 #devs .team h2 span {
   color: #00428a;
 }
 
-
-
 #devs .team .box {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   border-top: 0.2px solid black;
   border-bottom: 4px solid black;
   margin-top: 30px;
@@ -2122,7 +2101,7 @@ h6 {
   position: relative;
 }
 
-#devs img{
+#devs img {
   height: 250px;
   width: 250px;
 }
@@ -2144,11 +2123,11 @@ h6 {
   margin-top: 5px;
 }
 
-#devs .team .box .links{
+#devs .team .box .links {
   padding-top: 10px;
   padding-bottom: 25px;
 }
-#devs .team .box a{
+#devs .team .box a {
   color: black;
   padding: 2px;
 }

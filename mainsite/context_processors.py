@@ -1,4 +1,4 @@
-from mainsite.models import Service, Advisor
+from mainsite.models import Advisor, Service
 
 
 def all_services(request):

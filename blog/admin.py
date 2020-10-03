@@ -1,6 +1,5 @@
-from django.contrib import admin
-
 from blog.models import Category, Publication
+from django.contrib import admin
 
 
 @admin.register(Publication)

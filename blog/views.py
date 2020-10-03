@@ -1,6 +1,5 @@
-from django.shortcuts import get_object_or_404, render
-
 from blog.models import Category, Publication
+from django.shortcuts import get_object_or_404, render
 
 
 def publication_page(request, publication_id):

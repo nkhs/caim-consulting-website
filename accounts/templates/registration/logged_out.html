@@ -3,10 +3,14 @@
 {% load static %}
 
 <main id="main">
-  <div class="container" id = "logout-page">
-    <h2 style="text-align: center;">You were logged out successfully!</h2>  
-    <i class="fa fa-sign-out fa-5x" aria-hidden="true" style="text-align: center;"></i>
-    <br>
+  <div class="container" id="logout-page">
+    <h2 style="text-align: center">You were logged out successfully!</h2>
+    <i
+      class="fa fa-sign-out fa-5x"
+      aria-hidden="true"
+      style="text-align: center"
+    ></i>
+    <br />
     <form action="{% url 'login' %}">
       <button type="submit" class="btn btn-primary">Log In</button>
     </form>
