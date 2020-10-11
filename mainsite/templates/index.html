@@ -283,7 +283,7 @@
       </div>
 
       <div class="row justify-content-center">
-        <div data-aos="zoom-in" data-aos-delay="200">
+        <div data-aos="zoom-in">
           <form action="{% url 'services' %}">
             <button type="submit" class="btn btn-primary">Know More</button>
           </form>
@@ -384,7 +384,7 @@
       Team Section
     ============================-->
   <section id="team" class="section-bg">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <header class="section-header">
         <h3>Our Team</h3>
       </header>
@@ -508,7 +508,7 @@
       </div>
       <br />
       <div class="row justify-content-center">
-        <div data-aos="zoom-in" data-aos-delay="200">
+        <div data-aos="zoom-in">
           <form action="{% url 'developers' %}">
             <button type="submit" class="btn btn-primary">
               Meet our Developers
@@ -525,7 +525,7 @@
       Board Section
     ============================-->
   <section id="board">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <!-- Section heading -->
       <div class="section-header">
         <h3>Our Advisory Board</h3>
@@ -537,7 +537,7 @@
       </div>
 
       <!-- Grid row -->
-      <div class="container">
+      <div class="container" data-aos="zoom-in">
         <div class="row justify-content-center">
           {% for advisor in advisors %}
           <!-- Grid column -->
