@@ -628,29 +628,19 @@
       </header>
 
       <div class="row justify-content-center no-gutters" data-aos="zoom-in">
+        {% for client in clients %}
         <div class="col-lg-3 col-md-4 col-xs-6">
           <div class="client-logo">
-            <a href="http://ecell-nitt.org/ventura/" target="_blank">
+            <a href="{{ client.client_url }}" target="_blank">
               <img
-                src="{% static 'img/clients/ventura20.png' %}"
+                src="{{ client.logo.url }}"
                 class="img-fluid"
-                alt="Ventura Logo"
+                alt="{{ client.name }}"
               />
             </a>
           </div>
         </div>
-
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <div class="client-logo">
-            <a href="http://ecell-nitt.org/" target="_blank">
-              <img
-                src="{% static 'img/clients/nitt-ecell.png' %}"
-                class="img-fluid"
-                alt="E-Cell NIT Trichy Logo"
-              />
-            </a>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>

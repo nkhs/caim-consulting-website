@@ -1,4 +1,4 @@
-from mainsite.models import Advisor, Service
+from mainsite.models import Advisor, Client, Service
 
 
 def all_services(request):
@@ -9,3 +9,8 @@ def all_services(request):
 def all_advisors(request):
     advisors = Advisor.objects.all()
     return {"advisors": advisors}
+
+
+def all_clients(request):
+    clients = Client.objects.all()
+    return {"clients": clients}

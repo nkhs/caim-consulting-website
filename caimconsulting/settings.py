@@ -90,6 +90,7 @@ TEMPLATES = [
                 "blog.context_processors.all_categories",
                 "mainsite.context_processors.all_services",
                 "mainsite.context_processors.all_advisors",
+                "mainsite.context_processors.all_clients",
             ],
         },
     },
