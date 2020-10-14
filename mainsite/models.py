@@ -12,6 +12,19 @@ class Service(models.Model):
         return self.name
 
 
+class Client(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    logo = models.ImageField(upload_to="clients/")
+    client_url = models.URLField(null=True, blank=True)
+    disp_priority = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.name}: {self.client_url}"
+
+    class Meta:
+        ordering = ["disp_priority"]
+
+
 class Chat(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     service = models.ForeignKey("Service", on_delete=models.CASCADE)

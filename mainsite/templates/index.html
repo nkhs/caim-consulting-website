@@ -283,7 +283,7 @@
       </div>
 
       <div class="row justify-content-center">
-        <div data-aos="zoom-in" data-aos-delay="200">
+        <div data-aos="zoom-in">
           <form action="{% url 'services' %}">
             <button type="submit" class="btn btn-primary">Know More</button>
           </form>
@@ -384,7 +384,7 @@
       Team Section
     ============================-->
   <section id="team" class="section-bg">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <header class="section-header">
         <h3>Our Team</h3>
       </header>
@@ -508,7 +508,7 @@
       </div>
       <br />
       <div class="row justify-content-center">
-        <div data-aos="zoom-in" data-aos-delay="200">
+        <div data-aos="zoom-in">
           <form action="{% url 'developers' %}">
             <button type="submit" class="btn btn-primary">
               Meet our Developers
@@ -525,7 +525,7 @@
       Board Section
     ============================-->
   <section id="board">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <!-- Section heading -->
       <div class="section-header">
         <h3>Our Advisory Board</h3>
@@ -537,7 +537,7 @@
       </div>
 
       <!-- Grid row -->
-      <div class="container">
+      <div class="container" data-aos="zoom-in">
         <div class="row justify-content-center">
           {% for advisor in advisors %}
           <!-- Grid column -->
@@ -616,6 +616,43 @@
     <!-- Grid row -->
   </section>
   <!-- #board -->
+
+  <!--==========================
+      Clients Section
+   ============================-->
+  <section id="clients" class="section-bg">
+    <div class="container" data-aos="fade-up">
+      <header class="section-header">
+        <h3>Clients & Collaborations</h3>
+        <!-- <p>People we've worked with</p> -->
+      </header>
+
+      <div class="row justify-content-center no-gutters" data-aos="zoom-in">
+        {% for client in clients %}
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo">
+            {% if client.client_url %}
+            <a href="{{ client.client_url }}" target="_blank">
+              <img
+                src="{{ client.logo.url }}"
+                class="img-fluid"
+                alt="{{ client.name }}"
+              />
+            </a>
+            {% else %}
+            <img
+              src="{{ client.logo.url }}"
+              class="img-fluid"
+              alt="{{ client.name }}"
+            />
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- #clients -->
 
   <!--==========================
       Contact Section

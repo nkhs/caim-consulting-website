@@ -1,10 +1,20 @@
 from django.contrib import admin
-from mainsite.models import Advisor, Chat, Message, Service, Subscriber
+from mainsite.models import Advisor, Chat, Client, Message, Service, Subscriber
 
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(Client)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = (
+        "disp_priority",
+        "name",
+        "client_url",
+    )
+    search_fields = ("name",)
 
 
 @admin.register(Subscriber)
