@@ -15,7 +15,7 @@ class Service(models.Model):
 class Client(models.Model):
     name = models.CharField(max_length=50, unique=True)
     logo = models.ImageField(upload_to="clients/")
-    client_url = models.URLField()
+    client_url = models.URLField(null=True, blank=True)
     disp_priority = models.IntegerField()
 
     def __str__(self):

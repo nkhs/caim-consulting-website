@@ -631,6 +631,7 @@
         {% for client in clients %}
         <div class="col-lg-3 col-md-4 col-xs-6">
           <div class="client-logo">
+            {% if client.client_url %}
             <a href="{{ client.client_url }}" target="_blank">
               <img
                 src="{{ client.logo.url }}"
@@ -638,6 +639,13 @@
                 alt="{{ client.name }}"
               />
             </a>
+            {% else %}
+            <img
+              src="{{ client.logo.url }}"
+              class="img-fluid"
+              alt="{{ client.name }}"
+            />
+            {% endif %}
           </div>
         </div>
         {% endfor %}
