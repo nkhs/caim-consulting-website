@@ -3,14 +3,16 @@
 {% load static %}
 
 <main id="main">
-  <div class="container text-center">
-    <h1 class="display-1">{{ category.name }}</h1>
+  <div class="container text-center" style="margin-bottom: 60px;">
+    <h1 class="display-4">{{ category.name }}</h1>
+    <hr>
   </div>
   <div class="container">
-    {% if publications_in_category %}
+    <div class="row justify-content-center">
+      {% if publications_in_category %}
     <div class="card-columns">
       {% for publication in publications_in_category %}
-      <div class="card bg-light mb-3" style="max-width: 18rem; display: block; margin-left: auto; margin-right: auto;">
+      <div class="card bg-light mb-3 card-pub" style="max-width: 18rem; ">
         {% if publication.picture %}
         <img
           class="card-img-top"
@@ -39,6 +41,8 @@
       <h1 class="display-4">Nothing here yet</h1>
     </div>
     {% endif %}
+    </div>
+    
   </div>
 </main>
 
