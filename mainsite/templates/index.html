@@ -541,7 +541,7 @@
         <div class="row justify-content-center">
           {% for advisor in advisors %}
           <!-- Grid column -->
-          <div class="col-lg-4 col-md-6 mb-md-0 mb-3">
+          <div class="col-lg-4 col-md-6  col-6 ">
             <div class="container-advisors">
               <div class="avatar mx-auto">
                 <div class="avatar-image">
@@ -549,7 +549,7 @@
                     src="{{ advisor.picture.url }}"
                     class="avatar-img z-depth-1"
                     alt="{{ advisor.name }} picture"
-                    style="height: 260px; width: 260px;"
+                    sizes="400vw"
                   />
                   <div class="overlay"></div>
                   <div class="button-avatar">
@@ -570,7 +570,7 @@
                       alt="{{ advisor.name }} picture"
                     /> -->
               </div>
-              <div class="container">
+              <div class="container text-adv">
                 <h5 class="font-weight-bold mb-1">{{ advisor.name }}</h5>
                 <hr style="margin: 0px 0px 5px 0px;" />
                 <p class="text-uppercase blue-text">{{ advisor.position }}</p>
