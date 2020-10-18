@@ -16,14 +16,27 @@
       gtag("config", "UA-175600818-1");
     </script>
 
+    <!-- Loading Django static -->
+    {% load static %}
+
     <meta charset="utf-8" />
     <title>Caim Consulting</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
+    <meta name="title" content="Caim Consulting" />
+    <meta
+      name="description"
+      content="Caim Consulting is a non-profit initiative pioneered with an aim to deliver cost free legal assistance to start-ups, innovations and businesses."
+    />
 
-    <!-- Loading Django static -->
-    {% load static %}
+    <!-- Link Preview meta tags based on OGP -->
+    <meta property="og:title" content="Caim Consulting" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.caimconsulting.in" />
+    <meta
+      property="og:description"
+      content="Caim Consulting is a non-profit initiative pioneered with an aim to deliver cost free legal assistance to start-ups, innovations and businesses."
+    />
+    <meta property="og:image" content="{% static 'img/caim_logo.png' %}" />
 
     <!-- Favicons -->
     <link href="{% static 'img/favicon1.png' %}" rel="icon" />
