@@ -16,6 +16,9 @@
       gtag("config", "UA-175600818-1");
     </script>
 
+    <!-- Loading Django static -->
+    {% load static %}
+
     <meta charset="utf-8" />
     <title>Caim Consulting</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -36,9 +39,6 @@
     to deliver cost free legal assistance to start-ups, innovations and businesses."
     />
     <meta property="og:image" content="{% static 'img/caim_logo.png' %}" />
-
-    <!-- Loading Django static -->
-    {% load static %}
 
     <!-- Favicons -->
     <link href="{% static 'img/favicon1.png' %}" rel="icon" />
