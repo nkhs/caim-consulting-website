@@ -1,6 +1,15 @@
-{% extends "base.html" %} {% block page_content %}
+{% extends "base.html" %}
+
+<!-- prettier-ignore -->
+{% block title %}
+<title>Caim Consulting | Home</title>
+{% endblock %}
+
 <!-- prettier-ignore -->
 {% load static %}
+
+<!-- prettier-ignore -->
+{% block page_content %}
 
 <!--==========================
     Intro Section
@@ -541,7 +550,7 @@
         <div class="row justify-content-center">
           {% for advisor in advisors %}
           <!-- Grid column -->
-          <div class="col-lg-4 col-md-6  col-6 ">
+          <div class="col-lg-4 col-md-6 col-6">
             <div class="container-advisors">
               <div class="avatar mx-auto">
                 <div class="avatar-image">

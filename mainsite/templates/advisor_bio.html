@@ -1,6 +1,31 @@
-{% extends "base.html" %} {% block page_content %}
+{% extends "base.html" %}
+
+<!-- prettier-ignore -->
+{% block title %}
+<title>Caim Consulting | {{ advisor.name }}</title>
+{% endblock %}
+
 <!-- prettier-ignore -->
 {% load static %}
+{% block metatags %}
+<meta name="title" content="Advisor | {{ advisor.name }}" />
+<meta name="description" content="Advisor of Caim Consulting" />
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block ogmetatags %}
+<meta property="og:title" content="Advisor | {{ advisor.name }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ request.build_absolute_uri }}" />
+<meta property="og:description" content="Advisor of Caim Consulting" />
+{% if advisor.picture %}
+<meta property="og:image" content="{{ advisor.picture.url }}" />
+{% endif %}
+<!-- prettier-ignore -->
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block page_content %}
 
 <main>
   <div class="container">

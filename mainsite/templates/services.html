@@ -1,6 +1,19 @@
-{% extends "base.html" %} {% block page_content %}
+{% extends "base.html" %}
+
+<!-- prettier-ignore -->
+{% block title %}
+<title>Caim Consulting | Services</title>
+{% endblock %}
+
 <!-- prettier-ignore -->
 {% load static %}
+{% block metatags %}
+<meta name="title" content="Services | Caim Consulting" />
+<meta name="description" content="Services by Caim Consulting" />
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block page_content %}
 
 <main id="main">
   <section class="service-grid pb-5 pt-5" id="services-list">
