@@ -1,6 +1,31 @@
-{% extends "base.html" %} {% block page_content %}
+{% extends "base.html" %}
+
+<!-- prettier-ignore -->
+{% block title %}
+<title>Caim Consulting | {{ publication.title }}</title>
+{% endblock %}
+
 <!-- prettier-ignore -->
 {% load static %}
+{% block metatags %}
+<meta name="title" content="{{ publication.title }}" />
+<meta name="description" content="Publication by Caim Consulting Team" />
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block ogmetatags %}
+<meta property="og:title" content="{{ publication.title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ request.build_absolute_uri }}" />
+<meta property="og:description" content="Publication by Caim Consulting Team" />
+{% if publication.picture %}
+<meta property="og:image" content="{{ publication.picture.url }}" />
+{% endif %}
+<!-- prettier-ignore -->
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block page_content %}
 
 <link href="{% static 'css/print.css' %}" rel="stylesheet" media="print" />
 

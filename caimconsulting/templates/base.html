@@ -20,23 +20,31 @@
     {% load static %}
 
     <meta charset="utf-8" />
+
+    {% block title %}
     <title>Caim Consulting</title>
+    {% endblock%}
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    {% block metatags %}
     <meta name="title" content="Caim Consulting" />
     <meta
       name="description"
       content="Caim Consulting is a non-profit initiative pioneered with an aim to deliver cost free legal assistance to start-ups, innovations and businesses."
     />
+    {% endblock %}
 
     <!-- Link Preview meta tags based on OGP -->
+    {% block ogmetatags %}
     <meta property="og:title" content="Caim Consulting" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.caimconsulting.in" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
     <meta
       property="og:description"
       content="Caim Consulting is a non-profit initiative pioneered with an aim to deliver cost free legal assistance to start-ups, innovations and businesses."
     />
     <meta property="og:image" content="{% static 'img/caim_logo.png' %}" />
+    {% endblock %}
 
     <!-- Favicons -->
     <link href="{% static 'img/favicon1.png' %}" rel="icon" />
@@ -100,7 +108,7 @@
             <a href="{% url 'homepage' %}#intro" class="scrollto">
               <img
                 width="250px"
-                style="padding-top: 10px"
+                style="padding-top: 10px;"
                 src="{% static 'img/caim.png' %}"
                 alt=""
                 class="img-fluid"
