@@ -104,7 +104,16 @@ def link_chat_to_message(data, user):
     subject = data["subject"]
     message = data["message"]
     service = data["service"]
-    chat = Chat(user=user, subject=subject, service=service)
+    contact_platform = data["contact_platform"]
+    mobile_num_chat = data["mobile_num_chat"]
+    chat = Chat(
+        user=user,
+        subject=subject,
+        service=service,
+        contact_platform=contact_platform,
+    )
+    if mobile_num_chat:
+        chat.mobile_num_chat = mobile_num_chat
     chat.save()
     message = Message(chat=chat, message_text=message)
     message.save()
