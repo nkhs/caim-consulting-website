@@ -63,7 +63,7 @@ class Message(models.Model):
         return f"{self.chat}: {self.message_text}"
 
     class Meta:
-        unique_together = (("chat", "offset"),)
+        unique_together = (("chat", "offset", "by_admin"),)
 
 
 class Advisor(models.Model):
