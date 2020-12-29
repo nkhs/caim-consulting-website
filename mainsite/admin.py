@@ -48,6 +48,8 @@ class ChatAdmin(admin.ModelAdmin):
         "pk",
         "created_at",
         "user",
+        "contact_platform",
+        "mobile_num_chat",
         "subject",
         "service",
         "resolved",
