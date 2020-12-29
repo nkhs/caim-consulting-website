@@ -117,4 +117,7 @@ def link_chat_to_message(data, user):
     chat.save()
     message = Message(chat=chat, message_text=message)
     message.save()
+    bot_reply = """Thank You! We have noted your request. The Caim Consulting Team will respond on your chosen contact platform within the next 24 hours."""
+    bot_message = Message(chat=chat, message_text=bot_reply, by_admin=True)
+    bot_message.save()
     return True
