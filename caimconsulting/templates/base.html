@@ -298,6 +298,20 @@
     <!-- Message Box JavaScript File -->
     <script src="{% static 'js/messageBox.js' %}"></script>
 
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("#contact_platform").on("change", function () {
+        if (this.value == "PHN") {
+          $("#if-mob-contact").show();
+          $("#mobile_num_chat").attr("data-rule","required");
+        } else {
+          $("#if-mob-contact").hide();
+          $("#mobile_num_chat").attr("data-rule","");
+        }
+      })
+    });
+    </script>
+
     <!-- Template Main Javascript File -->
     <script src="{% static 'js/main.js' %}"></script>
   </body>

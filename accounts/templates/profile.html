@@ -38,7 +38,9 @@
             <div id="contact">
               <div class="form">
                 <div id="sendmessage">
-                  Your message has been sent. Thank you!
+                  Thank You! We have noted your request. The Caim Consulting
+                  Team will respond on your chosen contact platform within the
+                  next 24 hours.
                 </div>
                 <div id="errormessage"></div>
                 <form
@@ -58,9 +60,41 @@
                     >
                       <option value="" disabled selected>Service</option>
                       {% for service in services %}
-                      <option value="{{ service.pk}}">{{ service }}</option>
+                      <option value="{{ service.pk }}">{{ service }}</option>
                       {% endfor %}
                     </select>
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group">
+                    <select
+                      class="form-control"
+                      id="contact_platform"
+                      name="contact_platform"
+                      data-rule="required"
+                      data-msg="Please choose a way for us to reach back"
+                    >
+                      <option value="" disabled selected
+                        >Contact Platform</option
+                      >
+                      <option value="PHN">via Phone/WhatsApp</option>
+                      <option value="EML">via Email</option>
+                      <option value="WEB">via Website Chat</option>
+                    </select>
+                    <div class="validation"></div>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="display: none;"
+                    id="if-mob-contact"
+                  >
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="mobile_num_chat"
+                      id="mobile_num_chat"
+                      placeholder="Mobile Number"
+                      data-msg="Please enter a mobile number"
+                    />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group">
