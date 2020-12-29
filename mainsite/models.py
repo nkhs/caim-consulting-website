@@ -26,10 +26,17 @@ class Client(models.Model):
 
 
 class Chat(models.Model):
+    CHAT_CHOICES = (
+        ("PHN", "via Phone/WhatsApp"),
+        ("EML", "via Email"),
+        ("WEB", "via Website Chat"),
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     service = models.ForeignKey("Service", on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     subject = models.CharField(max_length=50)
+    contact_platform = models.CharField(max_length=3, choices=CHAT_CHOICES)
+    mobile_num_chat = models.CharField(max_length=15, default="N/A")
     resolved = models.BooleanField(default=False)
 
     def __str__(self):
