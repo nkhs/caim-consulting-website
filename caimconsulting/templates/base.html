@@ -158,52 +158,82 @@
     <br />
     <footer id="footer">
       <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 footer-info">
-              <h3>Caim Consulting</h3>
-              <p>
-                Caim Consulting is a non-profit initiative pioneered with an aim
-                to deliver cost free legal assistance to start-ups, innovations
-                and businesses, especially those in their incubatory phases.
-              </p>
+        <div class="container" >
+          <div class="row justify-content-center">
+            <div class = "col-12">
+              <h2 >Contact Us</h2>
+              <hr style="background-color: aliceblue; width: 300px;">
             </div>
 
-            <div class="col-lg-2 col-md-6 footer-links">
-              <h4>Useful Links</h4>
-              <ul>
-                <li><a href="{% url 'homepage' %}#intro">Home</a></li>
-                <li><a href="{% url 'homepage' %}#about">About us</a></li>
-                <li><a href="{% url 'homepage' %}#services">Services</a></li>
-                <li>
-                  <a href="{% url 'privacy' %}" target="_blank">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="{% url 'disclaimer' %}" target="_blank">
-                    Disclaimer
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-6 footer-contact">
-              <h4>Contact Us</h4>
+            <div class="col-xl-3 col-lg-6 col-md-6 footer-info">
+              <h4>Hrishav Kumar</h4>
               <p>
-                <strong>Phone:</strong>+91-8789619680 <br />&nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; +91-8920705589<br />
-                <strong>Email:</strong>
+                <!-- <strong>Phone:</strong> -->
+                +91-7903349802 <br />
+                <!-- <strong>Email: </strong> -->
                 <a
                   class="footer-a"
                   target="_blank"
-                  href="mailto:contact@caimconsulting.in"
+                  href="mailto:hrishav@caimconsulting.in"
                 >
-                  contact@caimconsulting.in
+                  hrishav@caimconsulting.in
                 </a>
                 <br />
               </p>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 footer-info">
+              <h4>Ananya Sahu</h4>
+              <p>
+                <!-- <strong>Phone:</strong> -->
+                 +91-9406968778 <br />
+                <!-- <strong>Email: </strong> -->
+                <a
+                  class="footer-a"
+                  target="_blank"
+                  href="mailto:ananya@caimconsulting.in"
+                >
+                  ananya@caimconsulting.in
+                </a>
+                <br />
+              </p>
+            </div>
+            
+            <div class="col-xl-3 col-lg-6 col-md-6 footer-info">
+              <h4>Abhishek Jha</h4>
+              <p>
+                <!-- <strong>Phone:</strong> -->
+                +91-8789619680 <br />
+                <!-- <strong>Email: </strong> -->
+                <a
+                  class="footer-a"
+                  target="_blank"
+                  href="mailto:abhishek@caimconsulting.in"
+                >
+                  abhishek@caimconsulting.in
+                </a>
+                <br />
+              </p>
+            </div>
 
+            <div class="col-xl-3 col-lg-6 col-md-6 footer-info">
+              <h4>Kunwar Surya Pratap</h4>
+              <p>
+                <!-- <strong>Phone:</strong> -->
+                  +91-8920705589 <br />
+                <!-- <strong>Email: </strong> -->
+                <a
+                  class="footer-a"
+                  target="_blank"
+                  href="mailto:surya@caimconsulting.in"
+                >
+                  surya@caimconsulting.in
+                </a>
+                <br />
+              </p>
+            </div>
+            
+            <div class = "col-12 ">
+              <!-- <hr style="background-color: white; width: 300px;"> -->
               <div class="social-links">
                 <a href="https://twitter.com/CaimConsulting" class="twitter">
                   <i class="fa fa-twitter"></i>
@@ -221,26 +251,17 @@
                   <i class="fa fa-linkedin"></i>
                 </a>
               </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 footer-newsletter">
-              <h4>Our Publications</h4>
-              <p>Subscribe for regular updates to our publications</p>
-              <form action="/subscribe/" method="post">
-                {% csrf_token %}
-                <input
-                  type="email"
-                  placeholder="Enter your e-mail"
-                  name="email"
-                />
-                <button
-                  type="submit"
-                  class="btn btn-sm btn-primary"
-                  onclick="alert('Subscribed')"
-                >
-                  Subscribe
-                </button>
-              </form>
+              <div style="padding-top: 8px;">
+                <p>
+                  <a href="{% url 'privacy' %}" target="_blank">
+                    Privacy Policy
+                  </a>
+                   | 
+                  <a href="{% url 'disclaimer' %}" target="_blank">
+                    Disclaimer
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -1406,11 +1406,12 @@ h6 {
 
 #footer .footer-top {
   background: #004a99;
-  padding: 60px 0 30px 0;
+  padding: 60px 20px 30px 20px;
 }
 
 #footer .footer-top .footer-info {
   margin-bottom: 30px;
+  padding-right: 10px;
 }
 
 #footer .footer-top .footer-info h3 {
@@ -1426,9 +1427,10 @@ h6 {
 }
 
 #footer .footer-top .footer-info p {
-  font-size: 13px;
+  font-size: 17px;
   line-height: 24px;
   margin-bottom: 0;
+  margin-right: 15px;
   font-family: "Montserrat", sans-serif;
   color: #ecf5ff;
 }
@@ -1454,12 +1456,26 @@ h6 {
 }
 
 #footer .footer-top h4 {
-  font-size: 14px;
+  /* font-size: 14px;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 2px; */
+  padding-top: 10px;
+}
+
+#footer .footer-top h2{
+  text-align: center ;
+  font-size: 34px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 1px 0;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 #footer .footer-top .footer-links {
@@ -1493,7 +1509,7 @@ h6 {
 }
 
 #footer .footer-top .footer-contact p {
-  line-height: 26px;
+  line-height: 30px;
 }
 
 #footer .footer-top .footer-newsletter {
